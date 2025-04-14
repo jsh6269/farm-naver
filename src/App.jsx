@@ -3,6 +3,7 @@ import HomePage from "./routes/HomePage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import bgImage from "./assets/common/bg.png";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
