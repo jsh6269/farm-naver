@@ -38,6 +38,8 @@ import tab1_2 from "../assets/home/tab/tab_farm_main050512_more.gif";
 import tab2 from "../assets/home/tab/tab_farm_main050512_02.gif";
 import tab3 from "../assets/home/tab/tab_farm_main050512_03.gif";
 import newtab from "../assets/home/tab/bu_farm050512_new01.gif";
+import BannerRecom from "../components/BannerRecom";
+import BannerRank from "../components/BannerRank";
 
 const imagePairs = [
   { off: mu1_off, on: mu1_on },
@@ -151,9 +153,11 @@ const HomePage = () => {
         </div>
         <div className="w-[244px] h-[90px] bg-[#DAFF39] rounded-xl">
           <img src={tab2} className="mt-[-6px]" />
+          <BannerRecom />
         </div>
-        <div className="w-[185px] h-[90px] bg-[#DAFF39] rounded-xl">
+        <div className="relative w-[185px] h-[90px] bg-[#DAFF39] rounded-xl">
           <img src={tab3} className="mt-[-6px]" />
+          <BannerRank />
         </div>
       </div>
     </>
