@@ -37,6 +37,7 @@ import tab1 from "../assets/home/tab/tab_farm_main050512_01.gif";
 import tab1_2 from "../assets/home/tab/tab_farm_main050512_more.gif";
 import tab2 from "../assets/home/tab/tab_farm_main050512_02.gif";
 import tab3 from "../assets/home/tab/tab_farm_main050512_03.gif";
+import newtab from "../assets/home/tab/bu_farm050512_new01.gif";
 
 const imagePairs = [
   { off: mu1_off, on: mu1_on },
@@ -130,6 +131,23 @@ const HomePage = () => {
             <img src={tab1} />
             <img src={tab1_2} />
           </div>
+          <ol
+            style={{ fontFamily: "굴림", fontSize: "11.3px" }}
+            className="text-[#004674] font-light ml-2"
+          >
+            <li className="flex">
+              • 새 동물이 추가되었어요!
+              <img src={newtab} alt="new" className="self-center ml-1" />
+            </li>
+            <li className="flex">
+              • 동물농장 경찰 수사대!★
+              <img src={newtab} alt="new" className="self-center ml-1" />
+            </li>
+            <li className="flex">
+              • 향기로운 커피 박물관 ♥
+              <img src={newtab} alt="new" className="self-center ml-1.5" />
+            </li>
+          </ol>
         </div>
         <div className="w-[244px] h-[90px] bg-[#DAFF39] rounded-xl">
           <img src={tab2} className="mt-[-6px]" />
