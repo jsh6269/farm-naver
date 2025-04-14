@@ -38,41 +38,32 @@ import tab1_2 from "../assets/home/tab/tab_farm_main050512_more.gif";
 import tab2 from "../assets/home/tab/tab_farm_main050512_02.gif";
 import tab3 from "../assets/home/tab/tab_farm_main050512_03.gif";
 
-const imageModules1 = [
-  mu1_off,
-  mu2_off,
-  comicbook_up_off,
-  mu4_off,
-  mu5_off,
-  mu6_off,
-  mu8_off,
-  mu10_off,
-  mu12_off,
-  mu14_off,
-];
-
-const imageModules2 = [
-  mu1_on,
-  mu2_on,
-  comicbook_up_on,
-  mu4_on,
-  mu5_on,
-  mu6_on,
-  mu8_on,
-  mu10_on,
-  mu12_on,
-  mu14_on,
+const imagePairs = [
+  { off: mu1_off, on: mu1_on },
+  { off: mu2_off, on: mu2_on },
+  { off: comicbook_up_off, on: comicbook_up_on },
+  { off: mu4_off, on: mu4_on },
+  { off: mu5_off, on: mu5_on },
+  { off: mu6_off, on: mu6_on },
+  { off: mu8_off, on: mu8_on },
+  { off: mu10_off, on: mu10_on },
+  { off: mu12_off, on: mu12_on },
+  { off: mu14_off, on: mu14_on },
 ];
 
 const HomePage = () => {
   return (
     <>
       <div className="w-[751px] flex flex-wrap items-start relative">
-        {imageModules1.map((src, idx) => (
+        {imagePairs.map((img, idx) => (
           <div key={idx} className="relative group">
-            <img src={src} alt={`mu${idx + 1}_off`} className="object-cover" />
             <img
-              src={imageModules2[idx]}
+              src={img.off}
+              alt={`mu${idx + 1}_off`}
+              className="object-cover"
+            />
+            <img
+              src={img.on}
               alt={`mu${idx + 1}_on`}
               className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
             />
