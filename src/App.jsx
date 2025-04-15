@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import bgImage from "./assets/common/bg.png";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import FestivalPage from "./routes/FestivalPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/festival" element={<FestivalPage />} />
         </Routes>
         <Footer />
       </div>
