@@ -17,8 +17,8 @@ function App() {
           backgroundRepeat: "repeat-x",
           backgroundSize: "390px auto",
           backgroundPosition: "top left",
-          height: "100vh",
-          width: "100vw",
+          height: "100%",
+          width: "100%",
         }}
       />
       <div className="template-container flex flex-col items-center">
