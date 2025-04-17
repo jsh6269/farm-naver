@@ -271,27 +271,36 @@ export default function FarmSidebar() {
   return (
     <div className="w-[145px] ml-[16px] mr-[12px] mb-[15px] mt-1 flex flex-col items-center font-sans text-[15px]">
       {/* 내 농장 바로가기 */}
-      <div className="w-full bg-gradient-to-b from-sky-200 to-green-200 rounded-2xl p-2 mb-2">
-        <div className="flex items-center mb-1">
+      <div className="w-full rounded-2xl mb-2 pb-0.1">
+        <div className="h-1/2 bg-[#00ACFF] rounded-t-2xl">
+          <div className="flex items-center pt-2">
+            <img
+              src={leftBtnMyfarmGo}
+              alt="내 농장 바로가기"
+              className="w-full h-[30px] object-cover rounded-t-lg"
+              draggable={false}
+            />
+          </div>
+        </div>
+        <div className="h-1/2 bg-[#AEEC1C] rounded-2xl pb-3">
           <img
-            src={leftBtnMyfarmGo}
-            alt="내 농장 바로가기"
-            className="w-full h-[30px] object-cover rounded-lg"
+            src={farmMainImg}
+            alt="농장"
+            className="mb-2"
+            draggable={false}
+          />
+          <div className="text-green-700 text-[10px] text-left my-3 mx-1 leading-tight px-2">
+            아직 농장이 없으신 분은
+            <br />
+            먼저 농장을 만드세요
+          </div>
+          <img
+            src={farmIcon}
+            alt="농장만들기"
+            className="rounded-lg mx-auto"
             draggable={false}
           />
         </div>
-        <img src={farmMainImg} alt="농장" className="mb-2" draggable={false} />
-        <div className="text-green-700 text-[10px] text-left my-3 mx-1 leading-tight">
-          아직 농장이 없으신 분은
-          <br />
-          먼저 농장을 만드세요
-        </div>
-        <img
-          src={farmIcon}
-          alt="농장만들기"
-          className="rounded-lg mb-1"
-          draggable={false}
-        />
       </div>
 
       {/* 상단 고정 메뉴 */}
