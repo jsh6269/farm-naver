@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   mu1_off,
   mu2_off,
@@ -110,14 +111,16 @@ const HomePage = () => {
             className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
           />
         </div>
-        <div className="absolute group top-[-95px] left-[598px]">
-          <img src={mu15_off} alt="mu15_off" className="object-cover" />
-          <img
-            src={mu15_on}
-            alt="mu15_on"
-            className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-          />
-        </div>
+        <Link to="/festival">
+          <div className="absolute group top-[-95px] left-[598px]">
+            <img src={mu15_off} alt="mu15_off" className="object-cover" />
+            <img
+              src={mu15_on}
+              alt="mu15_on"
+              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
+            />
+          </div>
+        </Link>
         <div className="absolute group top-[26px] left-[598px]">
           <img src={mu16_off} alt="mu16_off" className="object-cover" />
           <img

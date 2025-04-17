@@ -1,14 +1,26 @@
 import "./App.css";
 import HomePage from "./routes/HomePage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import bgImage from "./assets/common/bg.png";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FestivalPage from "./routes/FestivalPage";
+import { useEffect } from "react";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div
         style={{
           position: "absolute",
