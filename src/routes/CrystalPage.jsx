@@ -7,16 +7,16 @@ import btn3 from "../assets/festival/btn_festival28_farm_festiva.gif";
 const CrystalPage = () => {
   return (
     <div className="bg-[#FFF799] rounded-2xl flex">
-      <div className="text-center mt-1" style={{ fontFamily: "굴림" }}>
-        <span className="text-[12px]">
+      <div className="mt-1" style={{ fontFamily: "굴림" }}>
+        <span className="text-[12px] text-start ml-5">
           <a href="/" className="text-blue-700">
             동물농장
           </a>
-          &gt; 페스티벌
+          &nbsp; &gt; &nbsp; 라즈벨의 수정구슬
           <Sidebar />
         </span>
       </div>
-      <div className="w-[550px] h-[738px] bg-white rounded-2xl mt-[33px] mr-5">
+      <div className="w-[550px] h-[738px] bg-white rounded-2xl mt-[33px] mr-5 ml-[-2px]">
         <img src={festivalHeader} />
         <div className="bg-gradient-to-b from-amber-200 to-[#FEFBD9] mx-[10px] h-[470px] rounded-b-xl">
           <div
