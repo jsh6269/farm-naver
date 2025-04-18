@@ -1,12 +1,33 @@
 import Sidebar from "../components/Sidebar";
-import festivalHeader from "../assets/festival/img_festival01.gif";
-import btn1 from "../assets/festival/btn_festival28_ani_album.gif";
-import btn2 from "../assets/festival/btn_festival28_ani_festival.gif";
-import btn3 from "../assets/festival/btn_festival28_farm_festiva.gif";
+import comicHeader from "../assets/comic/sub_tit_comic.gif";
+import comicSub from "../assets/comic/h_comic_lst.gif";
+import comic1 from "../assets/comic/farm_comic_01.jpg";
+import comic2 from "../assets/comic/farm_comic_02.jpg";
+import comic3 from "../assets/comic/farm_comic_03.jpg";
+import comic4 from "../assets/comic/farm_comic_04.jpg";
+import comic5 from "../assets/comic/farm_comic_05.jpg";
+import comicb1 from "../assets/comic/farm_comic_cardbattle01.jpg";
+import comicb2 from "../assets/comic/farm_comic_cardbattle02.jpg";
+import comicb3 from "../assets/comic/farm_comic_cardbattle03.jpg";
+import comicb4 from "../assets/comic/farm_comic_cardbattle04.jpg";
+import comicb5 from "../assets/comic/farm_comic_cardbattle05.jpg";
+
+const comicPairs = [
+  { img: comic1, caption: "동물농장 1권" },
+  { img: comic2, caption: "동물농장 2권" },
+  { img: comic3, caption: "동물농장 3권" },
+  { img: comic4, caption: "동물농장 4권" },
+  { img: comic5, caption: "동물농장 5권" },
+  { img: comicb1, caption: "카드배틀 1권" },
+  { img: comicb2, caption: "카드배틀 2권" },
+  { img: comicb3, caption: "카드배틀 3권" },
+  { img: comicb4, caption: "카드배틀 4권" },
+  { img: comicb5, caption: "카드배틀 5권" },
+];
 
 const ComicPage = () => {
   return (
-    <div className="bg-[#FFF799] rounded-2xl flex">
+    <div className="bg-[#FFA825] rounded-2xl flex">
       <div className="mt-1" style={{ fontFamily: "굴림" }}>
         <span className="text-[12px] text-start ml-5">
           <a href="/" className="text-blue-700">
@@ -16,26 +37,24 @@ const ComicPage = () => {
           <Sidebar />
         </span>
       </div>
-      <div className="w-[550px] h-[738px] bg-white rounded-2xl mt-[33px] mr-5">
-        <img src={festivalHeader} />
-        <div className="bg-gradient-to-b from-amber-200 to-[#FEFBD9] mx-[10px] h-[470px] rounded-b-xl">
-          <div
-            className="bg-white mx-[10px] rounded-b-[5.5px] h-[459px] pt-4 px-5"
-            style={{ fontFamily: "굴림", fontSize: "12px" }}
-          >
-            <h3 className="font-semibold">
-              이번주 페스티발 주제는 “으스스 할로윈파티” 입니다.
-            </h3>
-            <p>
-              좀 있으면 다가오는 할로윈 데이를 기념하여 동물농장에서도
-              으스스하고 재미있는 할로윈 파티가 열렸나 봐요~!
-            </p>
-            <div className="flex flex-start flex-wrap gap-x-10.5 pl-1.5 gap-y-1 pt-5">
-              <img src={btn2} />
-              <img src={btn3} />
-            </div>
-            <div className="pt-3">
-              <img src={btn1} />
+      <div className="w-[550px] h-[828px] bg-white rounded-2xl mt-[33px] mr-5 mb-5">
+        <img src={comicHeader} className="mt-4 ml-2" />
+        <div
+          className="h-[459px] pt-4 px-5"
+          style={{ fontFamily: "굴림", fontSize: "12px" }}
+        >
+          <img src={comicSub} className="mx-auto mt-1 mb-2" />
+          <div className="mx-[33px]">
+            <div className="flex flex-wrap gap-x-12 pl-1.5 gap-y-1 pt-5">
+              {comicPairs.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="text-center text-[14px] text-blue-700"
+                >
+                  <img src={item.img} />
+                  <p className="mt-1 mb-3">{item.caption}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -66,7 +66,7 @@ export default function FarmSidebar() {
   const [tab, setTab] = useState(0);
 
   return (
-    <div className="w-[145px] ml-[16px] mr-[12px] mb-[15px] mt-1 flex flex-col items-center font-sans text-[15px]">
+    <div className="w-[145px] ml-[19.5px] mr-[12px] mb-[15px] mt-1 flex flex-col items-center font-sans text-[15px]">
       {/* 내 농장 바로가기 */}
       <div className="w-full rounded-2xl mb-2 pb-0.1">
         <div className="h-1/2 bg-[#00ACFF] rounded-t-2xl">

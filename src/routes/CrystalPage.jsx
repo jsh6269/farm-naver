@@ -16,7 +16,7 @@ const CrystalPage = () => {
           <Sidebar />
         </span>
       </div>
-      <div className="w-[550px] h-[738px] bg-white rounded-2xl mt-[33px] mr-5 ml-[-2px]">
+      <div className="w-[550px] h-[738px] bg-white rounded-2xl mt-[33px] mr-5">
         <img src={festivalHeader} />
         <div className="bg-gradient-to-b from-amber-200 to-[#FEFBD9] mx-[10px] h-[470px] rounded-b-xl">
           <div
