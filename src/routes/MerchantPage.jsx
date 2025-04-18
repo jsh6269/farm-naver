@@ -1,8 +1,54 @@
 import Sidebar from "../components/Sidebar";
-import festivalHeader from "../assets/festival/img_festival01.gif";
-import btn1 from "../assets/festival/btn_festival28_ani_album.gif";
-import btn2 from "../assets/festival/btn_festival28_ani_festival.gif";
-import btn3 from "../assets/festival/btn_festival28_farm_festiva.gif";
+
+import mainBg from "../assets/merchant/merchant_050106_main.gif";
+import blankGif from "../assets/merchant/blank.gif";
+import subImg from "../assets/merchant/merchant_050106_sub00.gif";
+import txtBg from "../assets/merchant/merchant_050106_sub00_txtbg.gif";
+import btnKnock from "../assets/merchant/btn_merchant_050106_knock.gif";
+
+const MerchantComponent = () => {
+  return (
+    <div className="flex flex-col items-center w-[555px]">
+      {/* 메인 섹션 */}
+      <div
+        className="w-[555px] h-[390px] flex"
+        style={{
+          backgroundImage: `url(${mainBg})`,
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="w-[157px]" />
+        <div className="flex flex-col">
+          <img src={blankGif} alt="" className="w-[1px] h-[74px]" />
+          <img src={subImg} alt="sub image" className="w-[214px] h-[287px]" />
+        </div>
+        <div className="w-[186px]" />
+      </div>
+
+      {/* 버튼 섹션 */}
+      <div className="w-full">
+        <div
+          className="h-[185px] flex justify-center items-end"
+          style={{
+            backgroundImage: `url(${txtBg})`,
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <a href="#">
+            <img
+              src={btnKnock}
+              alt="노크 버튼"
+              className="w-[156px] h-[32px]"
+            />
+          </a>
+        </div>
+
+        {/* 하단 디자인 */}
+        <div className="h-[70px] bg-[#FEF67A] rounded-b-xl" />
+      </div>
+    </div>
+  );
+};
 
 const MerchantPage = () => {
   return (
@@ -16,29 +62,8 @@ const MerchantPage = () => {
           <Sidebar />
         </span>
       </div>
-      <div className="w-[550px] h-[738px] bg-white rounded-2xl mt-[33px] mr-5">
-        <img src={festivalHeader} />
-        <div className="bg-gradient-to-b from-amber-200 to-[#FEFBD9] mx-[10px] h-[470px] rounded-b-xl">
-          <div
-            className="bg-white mx-[10px] rounded-b-[5.5px] h-[459px] pt-4 px-5"
-            style={{ fontFamily: "굴림", fontSize: "12px" }}
-          >
-            <h3 className="font-semibold">
-              이번주 페스티발 주제는 “으스스 할로윈파티” 입니다.
-            </h3>
-            <p>
-              좀 있으면 다가오는 할로윈 데이를 기념하여 동물농장에서도
-              으스스하고 재미있는 할로윈 파티가 열렸나 봐요~!
-            </p>
-            <div className="flex flex-start flex-wrap gap-x-10.5 pl-1.5 gap-y-1 pt-5">
-              <img src={btn2} />
-              <img src={btn3} />
-            </div>
-            <div className="pt-3">
-              <img src={btn1} />
-            </div>
-          </div>
-        </div>
+      <div className="w-[550px] mt-[33px] mr-5">
+        <MerchantComponent />
       </div>
     </div>
   );
