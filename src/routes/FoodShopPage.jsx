@@ -1,8 +1,6 @@
 import Sidebar from "../components/Sidebar";
-import festivalHeader from "../assets/festival/img_festival01.gif";
-import btn1 from "../assets/festival/btn_festival28_ani_album.gif";
-import btn2 from "../assets/festival/btn_festival28_ani_festival.gif";
-import btn3 from "../assets/festival/btn_festival28_farm_festiva.gif";
+import foodshopHeader from "../assets/foodshop/img_food01.gif";
+import btn1 from "../assets/foodshop/btn_food01.gif";
 
 const FoodShopPage = () => {
   return (
@@ -16,27 +14,19 @@ const FoodShopPage = () => {
           <Sidebar />
         </span>
       </div>
-      <div className="w-[550px] h-[738px] bg-white rounded-2xl mt-[33px] mr-5">
-        <img src={festivalHeader} />
-        <div className="bg-gradient-to-b from-amber-200 to-[#FEFBD9] mx-[10px] h-[470px] rounded-b-xl">
+      <div className="w-[550px] h-[708px] bg-white rounded-2xl mt-[33px] mr-5">
+        <img src={foodshopHeader} />
+        <div className="bg-gradient-to-b from-[#e68d01] to-[#FEFBD9] mx-[10px] h-[430px] rounded-b-xl">
           <div
-            className="bg-white mx-[10px] rounded-b-[5.5px] h-[459px] pt-4 px-5"
+            className="bg-white mx-[10px] rounded-b-[5.5px] h-[400px] pt-4 px-5"
             style={{ fontFamily: "굴림", fontSize: "12px" }}
           >
-            <h3 className="font-semibold">
-              이번주 페스티발 주제는 “으스스 할로윈파티” 입니다.
-            </h3>
             <p>
-              좀 있으면 다가오는 할로윈 데이를 기념하여 동물농장에서도
-              으스스하고 재미있는 할로윈 파티가 열렸나 봐요~!
+              여러분~ 쿠킹샵의 요리 조합법은 정말 다양하고 신기하답니다!~ <br />
+              빨리 새로운 요리를 해보세요! <br />
+              요리에 성공시 30% 저렴한 가격으로 살 수 있답니다.
             </p>
-            <div className="flex flex-start flex-wrap gap-x-10.5 pl-1.5 gap-y-1 pt-5">
-              <img src={btn2} />
-              <img src={btn3} />
-            </div>
-            <div className="pt-3">
-              <img src={btn1} />
-            </div>
+            <img src={btn1} className="mx-auto mt-8" />
           </div>
         </div>
       </div>
