@@ -4,23 +4,54 @@ import crystalTitle from "../assets/crystal/sub_tit35.gif";
 import crystalHeader from "../assets/crystal/img_cry01.gif";
 import txt_today from "../assets/crystal/txt_today.gif";
 import img262 from "../assets/crystal/262.gif";
+import img261 from "../assets/crystal/261.gif";
+import img260 from "../assets/crystal/260.gif";
 import btn_prev from "../assets/crystal/btn_prev_on.gif";
 import btn_next from "../assets/crystal/btn_next_on.gif";
 import h_comment from "../assets/crystal/h_comment.gif";
 
+const dummy = [
+  {
+    text: "봄이 왔는데도 추위가 계속되자 아픈 동물들이 많다고 해요~ \
+    이 소식을 들은 동물농장에서 마음도 예쁘고 얼굴도 예쁘기로 소문난 \
+    간호사 릴리가 약국을 열었다고 해요. 건강한 동물농장을 만들기 위해 \
+    노력하는 릴리의 착한 마음이 전해지지 않나요? 릴리의 약국에 어떤 \
+    아이템이 있는지 어서 구경하러 가보자고요!",
+    img: img262,
+  },
+  {
+    text: "지루한 겨울방학을 마치고 동물학교가 개학했어요~ \
+    새 학기가 되면 새로운 선생님, 새로운 친구들을 만나고 \
+    새 마음으로 시작하게 되고 주변에 모두 새로운 것들로 \
+    가득해지는 것 같아요! 새 학기를 시작한 동물들에게 필요한 \
+    특별한 아이템을 센스있는 빌아저씨가 구해다 놓으셨다고 해요~ \
+    무엇이 있는지 궁금하죠? 어서 가서 구경해 보아요!",
+    img: img261,
+  },
+  {
+    text: "귀엽고 사랑스러운 동물들이 가득한 동물농장에서도 \
+    특별히 더 큰 사랑을 한몸에 받고 있는 동물들을 위해 준비했어요~! \
+    그건 바로~아직은 작고 약한 아기 동물들이에요~ 아기 동물들에게 꼭 \
+    필요한 유아용품을 빌아저씨께서 구해오셨다고 해요~ \
+    농장에 아기 동물을 위해 필요한 용품이 뭐가 있는지 어서 와서 구경하세요!",
+    img: img260,
+  },
+];
+
 const CrystalPage = () => {
-  const [comments, setComments] = useState([]);
-  const [commentText, setCommentText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
+  };
+
+  const handleNext = () => {
+    if (currentIndex < dummy.length - 1) setCurrentIndex(currentIndex + 1);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (commentText.trim() === "") return;
-    const newComment = {
-      author: `손님${comments.length + 1}`,
-      text: commentText,
-    };
-    setComments([...comments, newComment]);
-    setCommentText("");
+    alert("로그인이 필요합니다.");
   };
 
   return (
@@ -55,40 +86,28 @@ const CrystalPage = () => {
               style={{ fontFamily: "굴림", fontSize: "12px" }}
             >
               <div className="mt-[80px] text-[12px] items-center">
-                봄이 왔는데도 추위가 계속되자 아픈 동물들이 많다고 해요~ 이
-                소식을 들은 동물농장에서 마음도 예쁘고 얼굴도 예쁘기로 소문난
-                간호사 릴리가 약국을 열었다고 해요. 건강한 동물농장을 만들기
-                위해 노력하는 릴리의 착한 마음이 전해지지 않나요? 릴리의 약국에
-                어떤 아이템이 있는지 어서 구경하러 가보자고요!
-                <img src={img262} />
+                {dummy[currentIndex].text}
+                <img src={dummy[currentIndex].img} alt="" />
               </div>
-              <div className="relative mt-6 mb-21">
-                <img src={btn_prev} className="absolute left-3" />
-                <img src={btn_next} className="absolute right-3" />
+              <div className="relative mt-5.5 h-8">
+                {currentIndex > 0 && (
+                  <img
+                    src={btn_prev}
+                    className="absolute left-3 cursor-pointer"
+                    onClick={handlePrev}
+                    alt="이전"
+                  />
+                )}
+                {currentIndex < dummy.length - 1 && (
+                  <img
+                    src={btn_next}
+                    className="absolute right-3 cursor-pointer"
+                    onClick={handleNext}
+                    alt="다음"
+                  />
+                )}
               </div>
-              <hr
-                style={{
-                  border: "none",
-                  borderTop: "1px solid #ccc",
-                  margin: "15px 0",
-                }}
-              />
-              <div>
-                {comments.map((comment, index) => (
-                  <div key={index} className="pb-0.5 text-[13px]">
-                    <strong>{comment.author}: </strong>
-                    <span className="whitespace-pre-line">
-                      {comment.text.split("\n").map((line, i) => (
-                        <span key={i}>
-                          {i === 0 ? line : "\u00A0" + line}
-                          {i !== comment.text.split("\n").length - 1 && <br />}
-                        </span>
-                      ))}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <img src={h_comment} className="mb-2 ml-0.5 mt-10" />
+              <img src={h_comment} className="mb-2 ml-0.5 mt-6" />
               <form onSubmit={handleSubmit}>
                 <textarea
                   id="comment"
@@ -97,8 +116,6 @@ const CrystalPage = () => {
                   cols="50"
                   placeholder="네티켓을 지켜주세요! 비방, 욕설, 도배글 등은 서비스 이용 제한사유가 될 수 있습니다."
                   className="w-full p-1 leading-snug border border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-600"
-                  value={commentText}
-                  onChange={(e) => setCommentText(e.target.value)}
                 ></textarea>
                 <button
                   type="submit"
