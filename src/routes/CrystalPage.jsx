@@ -1,15 +1,28 @@
+import React, { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import crystalTitle from "../assets/crystal/sub_tit35.gif";
 import crystalHeader from "../assets/crystal/img_cry01.gif";
 import txt_today from "../assets/crystal/txt_today.gif";
-import img260 from "../assets/crystal/260.gif";
-import img261 from "../assets/crystal/261.gif";
 import img262 from "../assets/crystal/262.gif";
 import btn_prev from "../assets/crystal/btn_prev_on.gif";
 import btn_next from "../assets/crystal/btn_next_on.gif";
 import h_comment from "../assets/crystal/h_comment.gif";
 
 const CrystalPage = () => {
+  const [comments, setComments] = useState([]);
+  const [commentText, setCommentText] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (commentText.trim() === "") return;
+    const newComment = {
+      author: `손님${comments.length + 1}`,
+      text: commentText,
+    };
+    setComments([...comments, newComment]);
+    setCommentText("");
+  };
+
   return (
     <div className="bg-[#ead4fe] rounded-2xl flex">
       <div className="mt-1" style={{ fontFamily: "굴림" }}>
@@ -53,8 +66,30 @@ const CrystalPage = () => {
                 <img src={btn_prev} className="absolute left-3" />
                 <img src={btn_next} className="absolute right-3" />
               </div>
-              <img src={h_comment} className="mb-2 ml-0.5" />
-              <form>
+              <hr
+                style={{
+                  border: "none",
+                  borderTop: "1px solid #ccc",
+                  margin: "15px 0",
+                }}
+              />
+              <div>
+                {comments.map((comment, index) => (
+                  <div key={index} className="pb-0.5 text-[13px]">
+                    <strong>{comment.author}: </strong>
+                    <span className="whitespace-pre-line">
+                      {comment.text.split("\n").map((line, i) => (
+                        <span key={i}>
+                          {i === 0 ? line : "\u00A0" + line}
+                          {i !== comment.text.split("\n").length - 1 && <br />}
+                        </span>
+                      ))}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <img src={h_comment} className="mb-2 ml-0.5 mt-10" />
+              <form onSubmit={handleSubmit}>
                 <textarea
                   id="comment"
                   name="comment"
@@ -62,10 +97,12 @@ const CrystalPage = () => {
                   cols="50"
                   placeholder="네티켓을 지켜주세요! 비방, 욕설, 도배글 등은 서비스 이용 제한사유가 될 수 있습니다."
                   className="w-full p-1 leading-snug border border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-600"
+                  value={commentText}
+                  onChange={(e) => setCommentText(e.target.value)}
                 ></textarea>
                 <button
                   type="submit"
-                  class="mt-2 mb-6 px-4.5 py-1.5 bg-gray-400 text-white font-medium hover:bg-gray-500"
+                  className="mt-2 mb-6 px-4.5 py-1.5 bg-gray-400 text-white font-medium hover:bg-gray-500"
                 >
                   글 남기기
                 </button>
@@ -77,4 +114,5 @@ const CrystalPage = () => {
     </div>
   );
 };
+
 export default CrystalPage;
