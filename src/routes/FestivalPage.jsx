@@ -30,11 +30,11 @@ const FestivalPage = () => {
               좀 있으면 다가오는 할로윈 데이를 기념하여 동물농장에서도
               으스스하고 재미있는 할로윈 파티가 열렸나 봐요~!
             </p>
-            <div className="flex flex-start flex-wrap gap-x-10.5 pl-1.5 gap-y-1 pt-5">
+            <div className="flex flex-start flex-wrap gap-x-10.5 pl-3 gap-y-1 pt-5">
               <img src={btn2} />
               <img src={btn3} />
             </div>
-            <div className="pt-3">
+            <div className="pt-3 pl-2">
               <img src={btn1} />
             </div>
           </div>
