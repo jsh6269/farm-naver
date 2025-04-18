@@ -43,16 +43,16 @@ import BannerRecom from "../components/BannerRecom";
 import BannerRank from "../components/BannerRank";
 
 const imagePairs = [
-  { off: mu1_off, on: mu1_on },
-  { off: mu2_off, on: mu2_on },
-  { off: comicbook_up_off, on: comicbook_up_on },
-  { off: mu4_off, on: mu4_on },
-  { off: mu5_off, on: mu5_on },
-  { off: mu6_off, on: mu6_on },
-  { off: mu8_off, on: mu8_on },
-  { off: mu10_off, on: mu10_on },
-  { off: mu12_off, on: mu12_on },
-  { off: mu14_off, on: mu14_on },
+  { off: mu1_off, on: mu1_on, href: "/myroom" },
+  { off: mu2_off, on: mu2_on, href: "/crystal" },
+  { off: comicbook_up_off, on: comicbook_up_on, href: "/comic" },
+  { off: mu4_off, on: mu4_on, href: "/school" },
+  { off: mu5_off, on: mu5_on, href: "/hospital" },
+  { off: mu6_off, on: mu6_on, href: "/minifarm" },
+  { off: mu8_off, on: mu8_on, href: "/petshop" },
+  { off: mu10_off, on: mu10_on, href: "/pointshop" },
+  { off: mu12_off, on: mu12_on, href: "/mix_dog" },
+  { off: mu14_off, on: mu14_on, href: "/foodshop" },
 ];
 
 const HomePage = () => {
@@ -61,73 +61,85 @@ const HomePage = () => {
       <div className="w-[751px] flex flex-wrap items-start relative">
         {imagePairs.map((img, idx) => (
           <div key={idx} className="relative group">
-            <img
-              src={img.off}
-              alt={`mu${idx + 1}_off`}
-              className="object-cover"
-            />
-            <img
-              src={img.on}
-              alt={`mu${idx + 1}_on`}
-              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-            />
+            <Link to={img.href}>
+              <img
+                src={img.off}
+                alt={`mu${idx + 1}_off`}
+                className="object-cover"
+              />
+              <img
+                src={img.on}
+                alt={`mu${idx + 1}_on`}
+                className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
+              />
+            </Link>
           </div>
         ))}
       </div>
       <div className="relative w-[751px] h-[130px]">
         <div className="absolute group top-[-92px]">
-          <img src={mu7_off} alt="mu7_off" className="object-cover" />
-          <img
-            src={mu7_on}
-            alt="mu7_on"
-            className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-          />
+          <Link to="/itemshop">
+            <img src={mu7_off} alt="mu7_off" className="object-cover" />
+            <img
+              src={mu7_on}
+              alt="mu7_on"
+              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
+            />
+          </Link>
         </div>
         <div className="absolute group top-[0px] left-[132px]">
-          <img src={mu9_off} alt="mu9_off" className="object-cover" />
-          <img
-            src={mu9_on}
-            alt="mu9_on"
-            className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-          />
+          <Link to="/sale">
+            <img src={mu9_off} alt="mu9_off" className="object-cover" />
+            <img
+              src={mu9_on}
+              alt="mu9_on"
+              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
+            />
+          </Link>
         </div>
         <div className="absolute group top-[-11px] left-[284px]">
-          <img
-            src={department_default_off}
-            alt="department_default_off"
-            className="object-cover"
-          />
-          <img
-            src={department_default_on}
-            alt="department_default_on"
-            className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-          />
+          <Link to="/department">
+            <img
+              src={department_default_off}
+              alt="department_default_off"
+              className="object-cover"
+            />
+            <img
+              src={department_default_on}
+              alt="department_default_on"
+              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
+            />
+          </Link>
         </div>
         <div className="absolute group top-[-11px] left-[452px]">
-          <img src={mu13_off} alt="mu13_off" className="object-cover" />
-          <img
-            src={mu13_on}
-            alt="mu13_on"
-            className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-          />
+          <Link to="/room">
+            <img src={mu13_off} alt="mu13_off" className="object-cover" />
+            <img
+              src={mu13_on}
+              alt="mu13_on"
+              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
+            />
+          </Link>
         </div>
-        <Link to="/festival">
-          <div className="absolute group top-[-95px] left-[598px]">
+        <div className="absolute group top-[-95px] left-[598px]">
+          <Link to="/festival">
             <img src={mu15_off} alt="mu15_off" className="object-cover" />
             <img
               src={mu15_on}
               alt="mu15_on"
               className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
             />
-          </div>
-        </Link>
+          </Link>
+        </div>
         <div className="absolute group top-[26px] left-[598px]">
-          <img src={mu16_off} alt="mu16_off" className="object-cover" />
-          <img
-            src={mu16_on}
-            alt="mu16_on"
-            className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-          />
+          <Link to="/explore">
+            <img src={mu16_off} alt="mu16_off" className="object-cover" />
+            <img
+              src={mu16_on}
+              alt="mu16_on"
+              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
+            />
+          </Link>
         </div>
       </div>
       <div className="w-[751px] h-[120px] bg-[#87E10E] mt-[10px] rounded-xl flex justify-center items-center gap-[16px]">
