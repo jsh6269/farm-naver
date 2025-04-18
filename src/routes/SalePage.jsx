@@ -6,7 +6,7 @@ import btn3 from "../assets/festival/btn_festival28_farm_festiva.gif";
 
 const SalePage = () => {
   return (
-    <div className="bg-[#FFF799] rounded-2xl flex">
+    <div className="bg-[#fe9aba] rounded-2xl flex">
       <div className="mt-1" style={{ fontFamily: "굴림" }}>
         <span className="text-[12px] text-start ml-5">
           <a href="/" className="text-blue-700">
