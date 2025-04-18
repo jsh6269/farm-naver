@@ -1,8 +1,55 @@
 import Sidebar from "../components/Sidebar";
-import festivalHeader from "../assets/festival/img_festival01.gif";
-import btn1 from "../assets/festival/btn_festival28_ani_album.gif";
-import btn2 from "../assets/festival/btn_festival28_ani_festival.gif";
-import btn3 from "../assets/festival/btn_festival28_farm_festiva.gif";
+
+import title1 from "../assets/mix_dog/title1.gif";
+import imgAlchemy01 from "../assets/mix_dog/img_alchemy01.gif";
+import imgAlchemy02 from "../assets/mix_dog/img_alchemy02.gif";
+import carAlchemy01Bg from "../assets/mix_dog/car_alchemy01_bg.gif";
+import gif01Sleep from "../assets/mix_dog/gif_01_sleep.gif";
+import btn01 from "../assets/mix_dog/btn_01.gif";
+
+const MixDogComponent = () => {
+  return (
+    <div className="bg-[#6118B3] w-[555px] flex flex-col items-center rounded-b-xl">
+      {/* 서브타이틀 */}
+      <img src={title1} alt="타이틀" width={555} height={245} />
+
+      <div className="flex w-[535px] bg-gradient-to-b from-[#b16500] to-[#ffc900] rounded-b-[12px] mb-12">
+        {/* 메인 컨텐츠 */}
+        <div className="w-[515px] mx-auto mb-5">
+          {/* 배경 이미지 영역 */}
+          <div
+            className="flex justify-center items-end h-[279px]"
+            style={{
+              backgroundImage: `url(${carAlchemy01Bg})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          >
+            <img
+              src={gif01Sleep}
+              alt="잠자는 강아지"
+              width={170}
+              height={185}
+            />
+          </div>
+
+          {/* 하얀 여백 */}
+          <div className="bg-white h-8" />
+
+          {/* 버튼 */}
+          <div className="bg-white flex justify-center">
+            <a href="https://jsh6269.github.io/farm.jr.naver.com/mix_dog/mix_dog.php.html">
+              <img src={btn01} alt="버튼" width={140} height={35} />
+            </a>
+          </div>
+
+          {/* 하얀 여백 */}
+          <div className="bg-white h-15 rounded-b-xl" />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const MixDogPage = () => {
   return (
@@ -16,29 +63,8 @@ const MixDogPage = () => {
           <Sidebar />
         </span>
       </div>
-      <div className="w-[550px] h-[738px] bg-white rounded-2xl mt-[33px] mr-5">
-        <img src={festivalHeader} />
-        <div className="bg-gradient-to-b from-amber-200 to-[#FEFBD9] mx-[10px] h-[470px] rounded-b-xl">
-          <div
-            className="bg-white mx-[10px] rounded-b-[5.5px] h-[459px] pt-4 px-5"
-            style={{ fontFamily: "굴림", fontSize: "12px" }}
-          >
-            <h3 className="font-semibold">
-              이번주 페스티발 주제는 “으스스 할로윈파티” 입니다.
-            </h3>
-            <p>
-              좀 있으면 다가오는 할로윈 데이를 기념하여 동물농장에서도
-              으스스하고 재미있는 할로윈 파티가 열렸나 봐요~!
-            </p>
-            <div className="flex flex-start flex-wrap gap-x-10.5 pl-1.5 gap-y-1 pt-5">
-              <img src={btn2} />
-              <img src={btn3} />
-            </div>
-            <div className="pt-3">
-              <img src={btn1} />
-            </div>
-          </div>
-        </div>
+      <div className="w-[550px] h-[78px] rounded-2xl mt-[33px] mr-5">
+        <MixDogComponent />
       </div>
     </div>
   );
