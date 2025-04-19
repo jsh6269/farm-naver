@@ -257,13 +257,13 @@ function DepartmentStore() {
 }
 
 const DepartmentPage = () => (
-  <div className="bg-[#FFF799] rounded-2xl flex">
+  <div className="bg-[#FFF78C] rounded-2xl flex">
     <div className="mt-1 font-gulim">
       <span className="text-[12px] text-start ml-5">
         <a href="/" className="text-blue-700">
           동물농장
         </a>
-        &nbsp; &gt; &nbsp; 페스티벌
+        &nbsp; &gt; &nbsp; 백화점
         <Sidebar />
       </span>
     </div>
