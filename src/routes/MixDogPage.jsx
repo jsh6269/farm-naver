@@ -1,8 +1,6 @@
 import Sidebar from "../components/Sidebar";
 
 import title1 from "../assets/mix_dog/title1.gif";
-import imgAlchemy01 from "../assets/mix_dog/img_alchemy01.gif";
-import imgAlchemy02 from "../assets/mix_dog/img_alchemy02.gif";
 import carAlchemy01Bg from "../assets/mix_dog/car_alchemy01_bg.gif";
 import gif01Sleep from "../assets/mix_dog/gif_01_sleep.gif";
 import btn01 from "../assets/mix_dog/btn_01.gif";

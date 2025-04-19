@@ -1,8 +1,14 @@
 import Sidebar from "../components/Sidebar";
-import festivalHeader from "../assets/festival/img_festival01.gif";
-import btn1 from "../assets/festival/btn_festival28_ani_album.gif";
-import btn2 from "../assets/festival/btn_festival28_ani_festival.gif";
-import btn3 from "../assets/festival/btn_festival28_farm_festiva.gif";
+import petshopTitle from "../assets/petshop/sub_tit26.gif";
+import petshopHeader from "../assets/petshop/img_protect07.gif";
+import subHeader from "../assets/petshop/petshop_060727_img.gif";
+import btn from "../assets/petshop/btn_060724_view.gif";
+import btn1 from "../assets/petshop/petshop_060727_btn01.gif";
+import btn2 from "../assets/petshop/petshop_060727_btn02.gif";
+import banner1 from "../assets/petshop/img_new01.gif";
+import banner2 from "../assets/petshop/img_new02.gif";
+import banner3 from "../assets/petshop/beautyshop0203_btn.gif";
+import { Link } from "react-router-dom";
 
 const PetShopPage = () => {
   return (
@@ -16,26 +22,30 @@ const PetShopPage = () => {
           <Sidebar />
         </span>
       </div>
-      <div className="w-[550px] h-[738px] bg-white rounded-2xl mt-[33px] mr-5">
-        <img src={festivalHeader} />
-        <div className="bg-gradient-to-b from-amber-200 to-[#FEFBD9] mx-[10px] h-[470px] rounded-b-xl">
+      <div className="w-[550px] h-[842px] bg-white rounded-2xl mt-[33px] mr-5 mb-7.5">
+        <div className="relative">
+          <img src={petshopTitle} className="mt-6 ml-5 mb-2" />
+          <img src={petshopHeader} className="mx-auto w-[530px]" />
+          <Link to="/petshop/story">
+            <img src={btn} className="absolute left-[348px] top-[211.5px]" />
+          </Link>
+        </div>
+        <div className="bg-gradient-to-b from-[#ffc0d4] to-[#f6f1ff] mx-[10px] h-[555px] rounded-b-xl">
           <div
-            className="bg-white mx-[10px] rounded-b-[5.5px] h-[459px] pt-4 px-5"
+            className="relative bg-white mx-[13px] rounded-[5.5px] h-[540px] mt-[-8px] pt-4 z-10"
             style={{ fontFamily: "굴림", fontSize: "12px" }}
           >
-            <h3 className="font-semibold">
-              이번주 페스티발 주제는 “으스스 할로윈파티” 입니다.
-            </h3>
-            <p>
-              좀 있으면 다가오는 할로윈 데이를 기념하여 동물농장에서도
-              으스스하고 재미있는 할로윈 파티가 열렸나 봐요~!
-            </p>
-            <div className="flex flex-start flex-wrap gap-x-10.5 pl-1.5 gap-y-1 pt-5">
-              <img src={btn2} />
-              <img src={btn3} />
+            <div className="mx-auto w-[488px] h-[175px] rounded-md border-2 border-[#ebe1ff] bg-[#f9f6ff]">
+              <img src={subHeader} className="mx-auto mt-1.5" />
+              <div className="flex justify-center gap-2">
+                <img src={btn1} />
+                <img src={btn2} />
+              </div>
             </div>
-            <div className="pt-3">
-              <img src={btn1} />
+            <div className="flex justify-center flex-wrap gap-x-10.5 pl-1.5 gap-y-4 pt-4">
+              <img src={banner1} className="w-[195px]" />
+              <img src={banner2} className="w-[195px]" />
+              <img src={banner3} className="w-[195px]" />
             </div>
           </div>
         </div>
