@@ -10,7 +10,6 @@ import btn_050127_times from "../assets/department/btn_050127_times.gif";
 import btn_store_salesman from "../assets/department/btn_store_salesman.gif";
 
 import store_roof from "../assets/department/store_roof.gif";
-
 import store_stair05 from "../assets/department/store_stair05.gif";
 import store_stair04 from "../assets/department/store_stair04.gif";
 import store_stair03 from "../assets/department/store_stair03.gif";
@@ -34,7 +33,148 @@ import sheeps_blue from "../assets/department/sheeps_blue.gif";
 import foxs from "../assets/department/foxs.gif";
 import chipmunks_1_yellow from "../assets/department/chipmunks_1_yellow.gif";
 
-const DepartmentStore = () => {
+// 층별 가게 데이터
+const STAGES = [
+  {
+    bg: store_stair05,
+    rooms: [
+      {
+        bg: skin_store_room03,
+        img: goatmxjs,
+        link: "https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('1');",
+        name: "재미있는옷가개",
+      },
+      {
+        bg: skin_store_room02,
+        img: weasels,
+        link: "https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('2');",
+        name: "래드 제일 잘나가...",
+      },
+      {
+        bg: skin_store_room01,
+        img: lions,
+        link: "https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('3');",
+        name: "^^와주이소",
+      },
+    ],
+    gaps: [15, 0, 0, 126, 11], // 좌측, room, room, room, 우측
+  },
+  {
+    bg: store_stair04,
+    rooms: [
+      {
+        bg: skin_store_room04,
+        img: goatmxjs,
+        link: "https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('4');",
+        name: "반짝반짝 보석 관...",
+      },
+      {
+        bg: skin_store_room04,
+        img: otters_1_pink,
+        link: "https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('5');",
+        name: "핼로우?",
+      },
+    ],
+    gaps: [15, 0, 131, 126, 11],
+  },
+  {
+    bg: store_stair03,
+    rooms: [
+      {
+        bg: skin_store_room05,
+        img: c_dids,
+        link: "https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('6');",
+        name: "몸 에좋은 음식점...",
+      },
+      {
+        bg: skin_store_room04,
+        img: sichus_blue,
+        link: "https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('7');",
+        name: "★행복 샵★",
+      },
+    ],
+    gaps: [15, 0, 131, 126, 11],
+  },
+  {
+    bg: store_stair02,
+    rooms: [
+      {
+        bg: skin_store_room02,
+        img: sheeps_blue,
+        link: "https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('8');",
+        name: "미주의 가게",
+      },
+      {
+        bg: skin_store_room02,
+        img: foxs,
+        link: "https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('9');",
+        name: "귀요미",
+      },
+      {
+        bg: skin_store_room04,
+        img: chipmunks_1_yellow,
+        link: "https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('10');",
+        name: "골라골라",
+      },
+    ],
+    gaps: [15, 0, 0, 126, 11],
+  },
+];
+
+// 가게 박스
+function StoreRoom({ bg, img, link, name }) {
+  return (
+    <div className="w-[131px] flex flex-col items-center">
+      <div className="h-[8px]" />
+      <div
+        className="w-[110px] h-[92px] flex items-end mr-[8.5px] translate-y-[4.5px] bg-center"
+        style={{
+          background: `url(${bg}) no-repeat center center`,
+          backgroundSize: "contain",
+        }}
+      >
+        <a href={link}>
+          <img src={img} className="ml-2 my-1" alt={name} />
+        </a>
+      </div>
+      <div className="h-[6px]" />
+      <div className="text-center">
+        <a href={link} className="text-[#333] text-[12px] pr-1.5">
+          {name}
+        </a>
+      </div>
+    </div>
+  );
+}
+
+// 층별 행 컴포넌트
+function StageRow({ bg, rooms, gaps }) {
+  return (
+    <div
+      className="w-[535px] h-[117px] flex flex-row"
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "calc(100% + 10px) 100%",
+        backgroundPosition: "-5px 0",
+        minHeight: 117,
+      }}
+    >
+      {/* 좌측 여백 */}
+      <div className={`w-[${gaps[0]}px]`} />
+      {/* 가게들 */}
+      {rooms.map((room, idx) => (
+        <StoreRoom key={room.name} {...room} />
+      ))}
+      {/* 중간/우측 여백 */}
+      {gaps.slice(2).map((gap, idx) => (
+        <div key={idx} className={`w-[${gap}px]`} />
+      ))}
+    </div>
+  );
+}
+
+function DepartmentStore() {
   return (
     <div className="w-[555px] bg-white font-sans text-[13px] text-[#333] mb-2">
       {/* 상단 박스 테두리 */}
@@ -57,19 +197,24 @@ const DepartmentStore = () => {
             />
             <span className="text-black">
               오늘 우리 마을의 아이템 시세는{" "}
-              <span className="text-[#660000] font-bold">0%</span> 입니다.
+              <span className="text-[#660000] font-bold">23%</span> 입니다.
             </span>
           </div>
-          <div className="flex flex-row items-center gap-2">
+          <div className="flex flex-row items-center gap-1 mr-1">
             <a href="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewExp();">
-              <img src={btn_050127_times} width={73} height={25} alt="" />
+              <img
+                src={btn_050127_times}
+                width={73}
+                height={25}
+                alt="시세변동"
+              />
             </a>
             <a href="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:GoApply();">
               <img
                 src={btn_store_salesman}
                 width={107}
                 height={25}
-                alt=""
+                alt="점원신청"
                 className="ml-[10px]"
               />
             </a>
@@ -77,130 +222,12 @@ const DepartmentStore = () => {
         </div>
         {/* 지붕 */}
         <div className="w-[545px] mx-auto">
-          <img src={store_roof} width={545} height={96} alt="" />
+          <img src={store_roof} width={545} height={96} alt="백화점 지붕" />
         </div>
-        {/* 5층 */}
-        <div
-          className="w-[535px] h-[117px] flex flex-row"
-          style={{
-            backgroundImage: `url(${store_stair05})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "calc(100% + 10px) 100%",
-            backgroundPosition: "-5px 0",
-            minHeight: 117,
-          }}
-        >
-          <div className="w-[15px]" />
-          <StoreRoom
-            bg={skin_store_room03}
-            img={goatmxjs}
-            link="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('1');"
-            name="재미있는옷가개"
-          />
-          <StoreRoom
-            bg={skin_store_room02}
-            img={weasels}
-            link="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('2');"
-            name="래드 제일 잘나가..."
-          />
-          <StoreRoom
-            bg={skin_store_room01}
-            img={lions}
-            link="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('3');"
-            name="^^와주이소"
-          />
-          <div className="w-[126px]" />
-          <div className="w-[11px]" />
-        </div>
-        {/* 4층 */}
-        <div
-          className="w-[535px] h-[117px] flex flex-row"
-          style={{
-            backgroundImage: `url(${store_stair04})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "calc(100% + 10px) 100%",
-            backgroundPosition: "-5px 0",
-            minHeight: 117,
-          }}
-        >
-          <div className="w-[15px]" />
-          <StoreRoom
-            bg={skin_store_room04}
-            img={goatmxjs}
-            link="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('4');"
-            name="반짝반짝 보석 관..."
-          />
-          <StoreRoom
-            bg={skin_store_room04}
-            img={otters_1_pink}
-            link="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('5');"
-            name="핼로우?"
-          />
-          <div className="w-[131px]" />
-          <div className="w-[126px]" />
-          <div className="w-[11px]" />
-        </div>
-        {/* 3층 */}
-        <div
-          className="w-[535px] h-[117px] flex flex-row"
-          style={{
-            backgroundImage: `url(${store_stair03})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "calc(100% + 10px) 100%",
-            backgroundPosition: "-5px 0",
-            minHeight: 117,
-          }}
-        >
-          <div className="w-[15px]" />
-          <StoreRoom
-            bg={skin_store_room05}
-            img={c_dids}
-            link="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('6');"
-            name="몸 에좋은 음식점..."
-          />
-          <StoreRoom
-            bg={skin_store_room04}
-            img={sichus_blue}
-            link="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('7');"
-            name="★행복 샵★"
-          />
-          <div className="w-[131px]" />
-          <div className="w-[126px]" />
-          <div className="w-[11px]" />
-        </div>
-        {/* 2층 */}
-        <div
-          className="w-[535px] h-[117px] flex flex-row"
-          style={{
-            backgroundImage: `url(${store_stair02})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "calc(100% + 10px) 100%",
-            backgroundPosition: "-5px 0",
-            minHeight: 117,
-          }}
-        >
-          <div className="w-[15px]" />
-          <StoreRoom
-            bg={skin_store_room02}
-            img={sheeps_blue}
-            link="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('8');"
-            name="미주의 가게"
-          />
-          <StoreRoom
-            bg={skin_store_room02}
-            img={foxs}
-            link="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('9');"
-            name="귀요미"
-          />
-          <StoreRoom
-            bg={skin_store_room04}
-            img={chipmunks_1_yellow}
-            link="https://jsh6269.github.io/farm.jr.naver.com/department/javascript:ViewShop('10');"
-            name="골라골라"
-          />
-          <div className="w-[126px]" />
-          <div className="w-[11px]" />
-        </div>
+        {/* 층별 가게 */}
+        {STAGES.map((stage, idx) => (
+          <StageRow key={idx} {...stage} />
+        ))}
         {/* 1층 */}
         <div
           className="w-[545px] h-[53px] flex flex-col justify-center"
@@ -216,7 +243,7 @@ const DepartmentStore = () => {
         </div>
         {/* 지하 */}
         <div className="w-[545px]">
-          <img src={store_stair00} width={545} height={140} alt="" />
+          <img src={store_stair00} width={545} height={140} alt="지하" />
         </div>
       </div>
       {/* 하단 박스 테두리 */}
@@ -227,55 +254,28 @@ const DepartmentStore = () => {
       </div>
     </div>
   );
-};
-
-// 층별 가게 박스 컴포넌트
-function StoreRoom({ bg, img, link, name }) {
-  return (
-    <div className="w-[131px] flex flex-col items-center">
-      <div className="h-[8px]" />
-      <div
-        className="w-[110px] h-[92px] flex items-end mr-[8.5px] translate-y-[4.5px] bg-center"
-        style={{
-          background: `url(${bg}) no-repeat`,
-          backgroundSize: "contain",
-        }}
-      >
-        <a href={link}>
-          <img src={img} className="ml-2 my-1" alt="" />
-        </a>
-      </div>
-      <div className="h-[6px]" />
-      <div className="text-center">
-        <a href={link} className="text-[#333333] text-[12px] pr-1.5">
-          {name}
-        </a>
-      </div>
-    </div>
-  );
 }
 
-const DepartmentPage = () => {
-  return (
-    <div className="bg-[#FFF799] rounded-2xl flex">
-      <div className="mt-1 font-gulim">
-        <span className="text-[12px] text-start ml-5">
-          <a href="/" className="text-blue-700">
-            동물농장
-          </a>
-          &nbsp; &gt; &nbsp; 페스티벌
-          <Sidebar />
-        </span>
-      </div>
-      <div className="w-[555px] bg-white rounded-2xl mt-[33px] mr-5 mb-6">
-        <img
-          src={title_store}
-          alt="페스티벌 헤더"
-          className="rounded-t-2xl mt-2.5"
-        />
-        <DepartmentStore />
-      </div>
+const DepartmentPage = () => (
+  <div className="bg-[#FFF799] rounded-2xl flex">
+    <div className="mt-1 font-gulim">
+      <span className="text-[12px] text-start ml-5">
+        <a href="/" className="text-blue-700">
+          동물농장
+        </a>
+        &nbsp; &gt; &nbsp; 페스티벌
+        <Sidebar />
+      </span>
     </div>
-  );
-};
+    <div className="w-[555px] bg-white rounded-2xl mt-[33px] mr-5 mb-6">
+      <img
+        src={title_store}
+        alt="페스티벌 헤더"
+        className="rounded-t-2xl mt-2.5"
+      />
+      <DepartmentStore />
+    </div>
+  </div>
+);
+
 export default DepartmentPage;
