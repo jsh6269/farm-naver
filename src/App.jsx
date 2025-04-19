@@ -1,9 +1,13 @@
 import "./App.css";
-import HomePage from "./routes/HomePage";
+import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+
 import bgImage from "./assets/common/bg.png";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
+import HomePage from "./routes/HomePage";
+import VillagePage from "./routes/VillagePage";
 
 import PointShopPage from "./routes/PointShopPage";
 import ItemShopPage from "./routes/ItemShopPage";
@@ -20,8 +24,6 @@ import HospitalPage from "./routes/HospitalPage";
 import SchoolPage from "./routes/SchoolPage";
 import PostPage from "./routes/PostPage";
 import ExplorePage from "./routes/ExplorePage";
-
-import { useEffect } from "react";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -53,6 +55,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/room" element={<VillagePage />} />
 
           {/* 상단 메뉴 */}
           <Route path="/pointshop" element={<PointShopPage />} />
