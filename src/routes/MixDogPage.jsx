@@ -1,5 +1,4 @@
 import Sidebar from "../components/Sidebar";
-
 import title1 from "../assets/mix_dog/title1.gif";
 import carAlchemy01Bg from "../assets/mix_dog/car_alchemy01_bg.gif";
 import gif01Sleep from "../assets/mix_dog/gif_01_sleep.gif";
@@ -9,7 +8,7 @@ const MixDogComponent = () => {
   return (
     <div className="bg-[#6118B3] w-[555px] flex flex-col items-center rounded-b-xl">
       {/* 서브타이틀 */}
-      <img src={title1} alt="타이틀" width={555} height={245} />
+      <img src={title1} alt="연금술 타이틀" className="w-[555px] h-[245px]" />
 
       <div className="flex w-[535px] bg-gradient-to-b from-[#b16500] to-[#ffc900] rounded-b-[12px] mb-12">
         {/* 메인 컨텐츠 */}
@@ -25,9 +24,8 @@ const MixDogComponent = () => {
           >
             <img
               src={gif01Sleep}
-              alt="잠자는 강아지"
-              width={170}
-              height={185}
+              alt="잠자는 믹스독"
+              className="w-[170px] h-[185px]"
             />
           </div>
 
@@ -36,13 +34,17 @@ const MixDogComponent = () => {
 
           {/* 버튼 */}
           <div className="bg-white flex justify-center">
-            <a href="https://jsh6269.github.io/farm.jr.naver.com/mix_dog/mix_dog.php.html">
-              <img src={btn01} alt="버튼" width={140} height={35} />
+            <a href="#">
+              <img
+                src={btn01}
+                alt="아이템 조합하러가기"
+                className="w-[140px] h-[35px]"
+              />
             </a>
           </div>
 
           {/* 하얀 여백 */}
-          <div className="bg-white h-15 rounded-b-xl" />
+          <div className="bg-white h-[60px] rounded-b-xl" />
         </div>
       </div>
     </div>
@@ -52,7 +54,7 @@ const MixDogComponent = () => {
 const MixDogPage = () => {
   return (
     <div className="bg-[#9351dc] rounded-2xl flex">
-      <div className="mt-1" style={{ fontFamily: "굴림" }}>
+      <div className="mt-1 font-gulim">
         <span className="text-[12px] text-start ml-5">
           <a href="/" className="text-blue-700">
             동물농장
@@ -61,10 +63,11 @@ const MixDogPage = () => {
           <Sidebar />
         </span>
       </div>
-      <div className="w-[550px] h-[78px] rounded-2xl mt-[33px] mr-5">
+      <div className="w-[550px] rounded-2xl mt-[33px] mr-5">
         <MixDogComponent />
       </div>
     </div>
   );
 };
+
 export default MixDogPage;

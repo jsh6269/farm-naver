@@ -55,123 +55,121 @@ const imagePairs = [
   { off: mu14_off, on: mu14_on, href: "/foodshop" },
 ];
 
+const absIcons = [
+  {
+    off: mu7_off,
+    on: mu7_on,
+    href: "/itemshop",
+    className: "absolute group top-[-92px] left-0",
+  },
+  {
+    off: mu9_off,
+    on: mu9_on,
+    href: "/sale",
+    className: "absolute group top-0 left-[132px]",
+  },
+  {
+    off: department_default_off,
+    on: department_default_on,
+    href: "/department",
+    className: "absolute group top-[-11px] left-[284px]",
+  },
+  {
+    off: mu13_off,
+    on: mu13_on,
+    href: "/room",
+    className: "absolute group top-[-11px] left-[452px]",
+  },
+  {
+    off: mu15_off,
+    on: mu15_on,
+    href: "/festival",
+    className: "absolute group top-[-95px] left-[598px]",
+  },
+  {
+    off: mu16_off,
+    on: mu16_on,
+    href: "/explore",
+    className: "absolute group top-[26px] left-[598px]",
+  },
+];
+
 const HomePage = () => {
   return (
     <>
+      {/* 상단 메뉴 아이콘 */}
       <div className="w-[751px] flex flex-wrap items-start relative">
         {imagePairs.map((img, idx) => (
           <div key={idx} className="relative group">
             <Link to={img.href}>
               <img
                 src={img.off}
-                alt={`mu${idx + 1}_off`}
+                alt={`menu${idx + 1}_off`}
                 className="object-cover"
+                draggable={false}
               />
               <img
                 src={img.on}
-                alt={`mu${idx + 1}_on`}
+                alt={`menu${idx + 1}_on`}
                 className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
+                draggable={false}
               />
             </Link>
           </div>
         ))}
       </div>
+      {/* 절대 위치 아이콘 */}
       <div className="relative w-[751px] h-[130px]">
-        <div className="absolute group top-[-92px]">
-          <Link to="/itemshop">
-            <img src={mu7_off} alt="mu7_off" className="object-cover" />
-            <img
-              src={mu7_on}
-              alt="mu7_on"
-              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-            />
-          </Link>
-        </div>
-        <div className="absolute group top-[0px] left-[132px]">
-          <Link to="/sale">
-            <img src={mu9_off} alt="mu9_off" className="object-cover" />
-            <img
-              src={mu9_on}
-              alt="mu9_on"
-              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-            />
-          </Link>
-        </div>
-        <div className="absolute group top-[-11px] left-[284px]">
-          <Link to="/department">
-            <img
-              src={department_default_off}
-              alt="department_default_off"
-              className="object-cover"
-            />
-            <img
-              src={department_default_on}
-              alt="department_default_on"
-              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-            />
-          </Link>
-        </div>
-        <div className="absolute group top-[-11px] left-[452px]">
-          <Link to="/room">
-            <img src={mu13_off} alt="mu13_off" className="object-cover" />
-            <img
-              src={mu13_on}
-              alt="mu13_on"
-              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-            />
-          </Link>
-        </div>
-        <div className="absolute group top-[-95px] left-[598px]">
-          <Link to="/festival">
-            <img src={mu15_off} alt="mu15_off" className="object-cover" />
-            <img
-              src={mu15_on}
-              alt="mu15_on"
-              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-            />
-          </Link>
-        </div>
-        <div className="absolute group top-[26px] left-[598px]">
-          <Link to="/explore">
-            <img src={mu16_off} alt="mu16_off" className="object-cover" />
-            <img
-              src={mu16_on}
-              alt="mu16_on"
-              className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
-            />
-          </Link>
-        </div>
-      </div>
-      <div className="w-[751px] h-[120px] bg-[#87E10E] mt-[10px] rounded-xl flex justify-center items-center gap-[16px]">
-        <div className="w-[260px] h-[90px] bg-[#DAFF39] rounded-xl">
-          <div className="mt-[-6px] flex">
-            <img src={tab1} />
-            <img src={tab1_2} />
+        {absIcons.map((icon, idx) => (
+          <div key={idx} className={icon.className}>
+            <Link to={icon.href}>
+              <img
+                src={icon.off}
+                alt={`${icon.href}_off`}
+                className="object-cover"
+                draggable={false}
+              />
+              <img
+                src={icon.on}
+                alt={`${icon.href}_on`}
+                className="absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100"
+                draggable={false}
+              />
+            </Link>
           </div>
-          <ol
-            style={{ fontFamily: "굴림", fontSize: "11.3px" }}
-            className="text-[#004674] font-light ml-2"
-          >
-            <li className="flex">
+        ))}
+      </div>
+      {/* 하단 탭/배너 */}
+      <div className="w-[751px] h-[120px] bg-[#87E10E] mt-[10px] rounded-xl flex justify-center items-center gap-4">
+        {/* 첫 번째 탭 */}
+        <div className="w-[260px] h-[90px] bg-[#DAFF39] rounded-xl flex flex-col">
+          <div className="mt-[-6px] flex">
+            <img src={tab1} alt="동물농장 새로운 소식" />
+            <img src={tab1_2} alt="more" />
+          </div>
+          <ol className="font-gulim text-[#004674] font-light ml-2 text-[11.3px]">
+            <li className="flex items-center">
               • 새 동물이 추가되었어요!
-              <img src={newtab} alt="new" className="self-center ml-1" />
+              <img src={newtab} alt="new" className="ml-1" />
             </li>
-            <li className="flex">
+            <li className="flex items-center">
               • 동물농장 경찰 수사대!★
-              <img src={newtab} alt="new" className="self-center ml-1" />
+              <img src={newtab} alt="new" className="ml-1" />
             </li>
-            <li className="flex">
+            <li className="flex items-center">
               • 향기로운 커피 박물관 ♥
-              <img src={newtab} alt="new" className="self-center ml-1.5" />
+              <img src={newtab} alt="new" className="ml-1.5" />
             </li>
           </ol>
         </div>
-        <div className="w-[244px] h-[90px] bg-[#DAFF39] rounded-xl">
-          <img src={tab2} className="mt-[-6px]" />
+        {/* 두 번째 탭 */}
+        <div className="w-[244px] h-[90px] bg-[#DAFF39] rounded-xl flex flex-col">
+          <img src={tab2} alt="오늘의 추천" className="mt-[-6px]" />
           <BannerRecom />
         </div>
-        <div className="relative w-[185px] h-[90px] bg-[#DAFF39] rounded-xl">
-          <img src={tab3} className="mt-[-6px]" />
+        {/* 세 번째 탭 */}
+        <div className="relative w-[185px] h-[90px] bg-[#DAFF39] rounded-xl flex flex-col">
+          <img src={tab3} alt="동물농장 랭킹" className="mt-[-6px]" />
           <BannerRank />
         </div>
       </div>

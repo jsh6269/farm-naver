@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@layer utilities {
+  .font-gulim {
+    font-family: "굴림", sans-serif;
+  }
+}

@@ -69,7 +69,7 @@ const PostForm = () => {
         <div className="flex-1">
           {/* 타이틀 */}
           <div className="ml-3">
-            <img src={titlePost} alt="title" />
+            <img src={titlePost} alt="우체국 타이틀" />
           </div>
           {/* 이미지 3개 + Hover Layer */}
           <div className="relative flex justify-between w-[537px] mx-auto">
@@ -81,14 +81,18 @@ const PostForm = () => {
                 onMouseLeave={() => setHovered(null)}
               >
                 <a href="#">
-                  <img src={img} alt="" className="w-auto h-[221px]" />
+                  <img
+                    src={img}
+                    alt="우체국 직원"
+                    className="w-auto h-[221px]"
+                  />
                 </a>
                 {hovered === idx && (
                   <div
                     className={`absolute z-10 ${hoverLayers[idx].left} bg-white`}
                     style={{ visibility: "visible" }}
                   >
-                    <img src={hoverLayers[idx].img} alt="" />
+                    <img src={hoverLayers[idx].img} alt="말풍선" />
                   </div>
                 )}
               </div>
@@ -98,7 +102,7 @@ const PostForm = () => {
           <div className="flex w-[537px] mx-auto bg-gradient-to-b from-[#ffd91f] to-[#fffeb2] rounded-b-[15px]">
             <div className="mx-auto mb-7">
               {/* 상단 띠 */}
-              <img src={mainPost01} alt="" className="" />
+              <img src={mainPost01} alt="보낼 친구" className="" />
               {/* 본문 */}
               <div
                 className="px-6 pb-4"
@@ -120,15 +124,15 @@ const PostForm = () => {
                   </button>
                   <span id="farmname" className="ml-2 text-xs text-[#666]" />
                 </div>
-                {/* 안내문구 */}
+                {/* 안내문구1 */}
                 <div className="flex justify-center py-1">
-                  <img src={text01} alt="" />
+                  <img src={text01} alt="내용 입력" />
                 </div>
                 {/* 탭 */}
                 <div className="flex justify-start pt-2 ml-[28px]">
-                  {tabs.map((tab) => (
+                  {tabs.map((tab, idx) => (
                     <button
-                      key={tab.value}
+                      key={idx}
                       onClick={() => setSelectedTab(tab.value)}
                       className={
                         selectedTab === tab.value ? "opacity-100" : "opacity-60"
@@ -155,13 +159,13 @@ const PostForm = () => {
                 </div>
                 {/* 안내문구2 */}
                 <div className="flex justify-center pb-1 pt-3">
-                  <img src={text02} alt="" />
+                  <img src={text02} alt="우표 선택" />
                 </div>
                 {/* 스탬프 */}
                 <div className="flex justify-center gap-4 py-2">
                   {stamps.map((stamp, idx) => (
                     <label
-                      key={stamp.value}
+                      key={idx}
                       className="flex flex-col items-center cursor-pointer"
                     >
                       <img
@@ -179,7 +183,7 @@ const PostForm = () => {
                       />
                       <img
                         src={stamp.text}
-                        alt=""
+                        alt="보관 일수"
                         className="w-[55px] h-[33px]"
                       />
                     </label>
@@ -197,7 +201,7 @@ const PostForm = () => {
                 </div>
               </div>
               {/* 하단 띠 */}
-              <img src={mainPost02} alt="" className="w-full" />
+              <img src={mainPost02} alt="하단 여백" className="w-full" />
             </div>
           </div>
         </div>

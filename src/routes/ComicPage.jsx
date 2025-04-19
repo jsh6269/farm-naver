@@ -28,7 +28,7 @@ const comicPairs = [
 const ComicPage = () => {
   return (
     <div className="bg-[#FFA825] rounded-2xl flex">
-      <div className="mt-1" style={{ fontFamily: "굴림" }}>
+      <div className="mt-1 font-gulim">
         <span className="text-[12px] text-start ml-5">
           <a href="/" className="text-blue-700">
             동물농장
@@ -38,21 +38,22 @@ const ComicPage = () => {
         </span>
       </div>
       <div className="w-[550px] h-[828px] bg-white rounded-2xl mt-[33px] mr-5 mb-5">
-        <img src={comicHeader} className="mt-4 ml-2" />
-        <div
-          className="h-[459px] pt-4 px-5"
-          style={{ fontFamily: "굴림", fontSize: "12px" }}
-        >
-          <img src={comicSub} className="mx-auto mt-1 mb-2" />
+        <img src={comicHeader} className="mt-4 ml-2" alt="코믹북 헤더" />
+        <div className="h-[459px] pt-4 px-5 font-gulim text-[12px]">
+          <img
+            src={comicSub}
+            className="mx-auto mt-1 mb-2"
+            alt="동물농장 관련 책 모두보기"
+          />
           <div className="mx-[33px]">
             <div className="flex flex-wrap gap-x-12 pl-1.5 gap-y-1 pt-5">
-              {comicPairs.map((item, idx) => (
+              {comicPairs.map(({ img, caption }, idx) => (
                 <div
                   key={idx}
                   className="text-center text-[14px] text-blue-700"
                 >
-                  <img src={item.img} />
-                  <p className="mt-1 mb-3">{item.caption}</p>
+                  <img src={img} alt={caption} />
+                  <p className="mt-1 mb-3">{caption}</p>
                 </div>
               ))}
             </div>
@@ -62,4 +63,5 @@ const ComicPage = () => {
     </div>
   );
 };
+
 export default ComicPage;

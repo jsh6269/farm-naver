@@ -1,5 +1,4 @@
 import Sidebar from "../components/Sidebar";
-
 import mainBg from "../assets/merchant/merchant_050106_main.gif";
 import blankGif from "../assets/merchant/blank.gif";
 import subImg from "../assets/merchant/merchant_050106_sub00.gif";
@@ -19,8 +18,8 @@ const MerchantComponent = () => {
       >
         <div className="w-[157px]" />
         <div className="flex flex-col">
-          <img src={blankGif} alt="" className="w-[1px] h-[74px]" />
-          <img src={subImg} alt="sub image" className="w-[214px] h-[287px]" />
+          <img src={blankGif} alt="blank" className="w-px h-[74px]" />
+          <img src={subImg} alt="상인 이미지" className="w-[214px] h-[287px]" />
         </div>
         <div className="w-[186px]" />
       </div>
@@ -38,11 +37,10 @@ const MerchantComponent = () => {
             <img
               src={btnKnock}
               alt="노크 버튼"
-              className="w-[156px] h-[32px]"
+              className="w-[156px] h-[32px] mr-[18px]"
             />
           </a>
         </div>
-
         {/* 하단 디자인 */}
         <div className="h-[70px] bg-[#FEF67A] rounded-b-xl" />
       </div>
@@ -53,7 +51,7 @@ const MerchantComponent = () => {
 const MerchantPage = () => {
   return (
     <div className="bg-[#ffec4f] rounded-2xl flex">
-      <div className="mt-1" style={{ fontFamily: "굴림" }}>
+      <div className="mt-1 font-gulim">
         <span className="text-[12px] text-start ml-5">
           <a href="/" className="text-blue-700">
             동물농장
@@ -68,4 +66,5 @@ const MerchantPage = () => {
     </div>
   );
 };
+
 export default MerchantPage;
