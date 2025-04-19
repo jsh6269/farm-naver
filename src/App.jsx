@@ -24,6 +24,7 @@ import HospitalPage from "./routes/HospitalPage";
 import SchoolPage from "./routes/SchoolPage";
 import PostPage from "./routes/PostPage";
 import ExplorePage from "./routes/ExplorePage";
+import RedVillagePage from "./routes/RedVillagePage";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -56,6 +57,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/room" element={<VillagePage />} />
+          <Route path="/room/red" element={<RedVillagePage />} />
 
           {/* 상단 메뉴 */}
           <Route path="/pointshop" element={<PointShopPage />} />

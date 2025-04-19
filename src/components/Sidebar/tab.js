@@ -78,7 +78,7 @@ const topMenus = [
     alt: "동물가게",
   },
   {
-    href: "/room",
+    href: "/room/red",
     off: muB06Off,
     on: muB06On,
     alt: "우리마을 가기",
