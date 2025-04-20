@@ -39,7 +39,7 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/farm-naver">
       <ScrollToTop />
       <div
         style={{
