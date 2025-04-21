@@ -308,7 +308,7 @@ const ItemShopPage = () => {
           <Sidebar />
         </span>
       </div>
-      <div className="w-[570px] bg-white rounded-2xl mt-[33px] mr-5 mb-5">
+      <div className="w-[570px] bg-white rounded-2xl mt-[33px] mr-6.5 mb-5">
         <ItemShop />
       </div>
     </div>
