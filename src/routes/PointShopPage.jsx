@@ -20,6 +20,7 @@ import FPBJIGSAW from "../assets/pointshop/FPBJIGSAW.gif";
 import point050516_room from "../assets/pointshop/point050516_room.gif";
 import hfGame from "../assets/pointshop/h_fgame.gif";
 import bgRank from "../assets/pointshop/bg_rank.gif";
+import spTab from "../assets/pointshop/sp_tab.gif";
 
 function PointShop() {
   return (
@@ -29,9 +30,8 @@ function PointShop() {
         <div className="w-[539px] mt-4 mb-2">
           <img src={point050516_title} alt="" width={120} height={33} />
         </div>
-
         {/* 오늘의 랭킹 */}
-        <div className="w-[539px] mb-4">
+        <div className="w-[539px] mb-3">
           <div
             className="bg-no-repeat h-[223px]"
             style={{ backgroundImage: `url(${bgRank})` }}
@@ -65,7 +65,6 @@ function PointShop() {
             </ol>
           </div>
         </div>
-
         {/* 게임목록 타이틀 */}
         <div className="w-[539px] mb-2">
           <img
@@ -90,42 +89,40 @@ function PointShop() {
             <img src={btn_level03} alt="" width={170} height={102} />
           </a>
         </div>
-
         {/* 플래시 게임 */}
-        <div className="w-[539px] mb-4">
+        <div className="w-[540px]">
           <img src={hfGame} className="mb-1" />
           <div className="bg-white p-2">
-            <ul className="flex flex-row mb-4">
-              <li className="mr-2">
-                <a
-                  className="m1 text-blue-600 font-semibold border-b-2 border-blue-600 pb-1"
-                  href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?tp=c"
-                >
-                  캐쥬얼
-                </a>
-              </li>
-              <li className="mr-2">
-                <a
-                  className="m2 text-gray-600"
-                  href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?tp=s"
-                >
-                  슈팅
-                </a>
-              </li>
-              <li>
-                <a
-                  className="m3 text-gray-600"
-                  href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?tp=a"
-                >
-                  액션
-                </a>
-              </li>
-            </ul>
-            <div className="bg-white text-[14px]">
-              <ul className="grid grid-cols-4 gap-4">
+            <div className="flex justify-between">
+              <button
+                className="w-[174px] h-[30px] bg-[left_top] hover:bg-[left_0px_top_34px] outline-none"
+                style={{
+                  backgroundImage: `url(${spTab})`,
+                  backgroundSize: "525px 88.42px",
+                }}
+                aria-label="캐주얼"
+              />
+              <button
+                className="w-[174px] h-[30px] bg-[-175px_top] hover:bg-[-175px_34px] outline-none"
+                style={{
+                  backgroundImage: `url(${spTab})`,
+                  backgroundSize: "525px 88.42px",
+                }}
+                aria-label="슈팅"
+              />
+              <button
+                className="w-[175px] h-[30px] bg-[-350px_top] hover:bg-[-350px_34px] outline-none"
+                style={{
+                  backgroundImage: `url(${spTab})`,
+                  backgroundSize: "525px 88.42px",
+                }}
+                aria-label="액션"
+              />
+            </div>
+            <div className="bg-[#fef3ff] text-[14px] border border-[#f4c0ff] rounded-b-2xl">
+              <ul className="grid grid-cols-4 gap-4 px-4 py-5">
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=111">
-                    <span className="absolute" />
                     <img
                       src={FPBPANG}
                       alt="트리플 팡"
@@ -137,7 +134,6 @@ function PointShop() {
                 </li>
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=112">
-                    <span className="absolute" />
                     <img
                       src={FPBSUDOKU}
                       alt="스도쿠 퍼즐왕"
@@ -149,7 +145,6 @@ function PointShop() {
                 </li>
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=113">
-                    <span className="absolute" />
                     <img
                       src={FPBDIFF}
                       alt="틀린그림찾기"
@@ -161,7 +156,6 @@ function PointShop() {
                 </li>
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=114">
-                    <span className="absolute" />
                     <img
                       src={FSPMUSIC}
                       alt="뮤직 톡톡"
@@ -173,7 +167,6 @@ function PointShop() {
                 </li>
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=116">
-                    <span className="absolute" />
                     <img
                       src={FSPDGDATE}
                       alt="두근두근 데이트"
@@ -185,7 +178,6 @@ function PointShop() {
                 </li>
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=118">
-                    <span className="absolute" />
                     <img
                       src={FACDOUGH}
                       alt="HOT DOUGH"
@@ -197,14 +189,12 @@ function PointShop() {
                 </li>
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=119">
-                    <span className="absolute" />
                     <img src={FPBHAO} alt="하오하오" width={131} height={101} />
                     <p className="pblock text-center mt-1">하오하오</p>
                   </a>
                 </li>
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=120">
-                    <span className="absolute" />
                     <img
                       src={FSPTYPING}
                       alt="가로세로타이핑"
@@ -216,7 +206,6 @@ function PointShop() {
                 </li>
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=125">
-                    <span className="absolute" />
                     <img
                       src={FSPTOUCH}
                       alt="터치터치"
@@ -228,7 +217,6 @@ function PointShop() {
                 </li>
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=134">
-                    <span className="absolute" />
                     <img
                       src={FACMILK}
                       alt="밀크쮸쮸"
@@ -240,14 +228,12 @@ function PointShop() {
                 </li>
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=142">
-                    <span className="absolute" />
                     <img src={FPBSUSHI} alt="스시짱" width={131} height={101} />
                     <p className="pblock text-center mt-1">스시짱</p>
                   </a>
                 </li>
                 <li>
                   <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=143">
-                    <span className="absolute" />
                     <img
                       src={FPBJIGSAW}
                       alt="직소퍼즐"
@@ -261,7 +247,6 @@ function PointShop() {
             </div>
           </div>
         </div>
-
         {/* 방 바로가기 */}
         <div className="w-[535px] flex justify-center mb-4">
           <a

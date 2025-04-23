@@ -51,7 +51,7 @@ function ItemShop() {
                     더보기
                   </a>
                 </div>
-                <div className="flex flex-row flex-wrap gap-2">
+                <div className="w-[480px] flex flex-row flex-wrap gap-2 justify-between">
                   {themeItems.map((item, idx) =>
                     item.show ? (
                       <a
@@ -64,11 +64,9 @@ function ItemShop() {
                           alt={item.name}
                           width={154}
                           height={85}
+                          className="rounded-md"
                         />
-                        <span className="absolute inset-0 bg-black/10 pointer-events-none" />
-                        <span className="absolute left-0 bottom-0 w-full text-center bg-white/80 text-black text-xs py-1">
-                          {item.name}
-                        </span>
+                        <span className="absolute inset-0 bg-black/2 pointer-events-none" />
                       </a>
                     ) : null
                   )}
