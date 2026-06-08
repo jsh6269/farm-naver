@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 
 import mainBg from "../assets/itemshop/main_bg.gif";
@@ -19,18 +20,17 @@ function ItemShop() {
     <div className="w-[576px]">
       {/* 상단 메뉴 */}
       <div
-        className="h-[219px] w-[576px] flex items-end"
+        className="h-[219px] w-[576px] flex items-end justify-around pb-1"
         style={{ backgroundImage: `url(${mainBg})` }}
       >
-        <div className="w-[55px]" />
         <a href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/list.php%253fkind%253dfood%2526kind_sub%253dfruit.html">
-          <img src={btnItem01} alt="btn_item01" />
+          <img src={btnItem01} alt="음식 아이템" />
         </a>
         <a href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/list.php%253fkind%253ditem%2526kind_sub%253dfootwear.html">
-          <img src={btnItem02} alt="btn_item02" />
+          <img src={btnItem02} alt="착용 아이템" />
         </a>
         <a href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/list.php%253fkind%253ddeco%2526kind_sub%253dfuniture.html">
-          <img src={btnItem03} alt="btn_item03" />
+          <img src={btnItem03} alt="꾸미기 아이템" />
         </a>
       </div>
       {/* 테마 아이템 */}
@@ -51,7 +51,7 @@ function ItemShop() {
                     더보기
                   </a>
                 </div>
-                <div className="w-[480px] flex flex-row flex-wrap gap-2 justify-between">
+                <div className="w-[500px] flex flex-row flex-wrap gap-2 justify-between">
                   {themeItems.map((item, idx) =>
                     item.show ? (
                       <a
@@ -130,54 +130,27 @@ function ItemShop() {
             {/* 신규/인기 아이템 */}
             <div className="bg-white mt-[15px] rounded-2xl">
               <div className="p-2">
-                <div className="flex items-center mb-2">
-                  <ul className="flex gap-2">
-                    <li className="new_item">
-                      <a
-                        className=""
-                        href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/javascript:showItemLayer('new');"
-                        id="liNewItem"
-                      >
-                        <span className="sr-only">신규 아이템</span>
-                      </a>
-                    </li>
-                    <li className="fov_item">
-                      <a
-                        className="on"
-                        href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/javascript:showItemLayer('pop');"
-                        id="liPopItem"
-                      >
-                        <span className="sr-only">인기 아이템</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
                 {/* 신규 아이템 */}
-                <div
-                  className="lst"
-                  id="divNewItem"
-                  style={{ display: "none" }}
-                >
-                  <h2 className="sr-only">신규 아이템</h2>
-                  <a
-                    className="btn lst_more"
-                    href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/search.php%253fkword%253d%2526sort%253dregdate%2526ad%253dDESC.html"
-                  >
-                    신규 아이템 더보기
-                  </a>
+                <div className="lst" id="divNewItem" style={{ display: "none" }}>
+                  <div className="flex justify-between items-center mb-2">
+                    <h2 className="font-bold text-lg">신규 아이템</h2>
+                    <a
+                      className="text-sm text-blue-600"
+                      href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/search.php%253fkword%253d%2526sort%253dregdate%2526ad%253dDESC.html"
+                    >
+                      더보기
+                    </a>
+                  </div>
                   <ul className="flex flex-wrap gap-2">
                     {newItems.map((item, idx) => (
-                      <li key={idx}>
+                      <li key={idx} className="w-[100px] text-center">
                         <a href={item.link} className="block">
                           <span className="img relative inline-block">
                             <img src={item.img} alt={item.name} />
                           </span>
-                          <span className="txt_v flex items-center">
-                            <span className="txt_m" />
-                            <span className="txt flex items-center">
-                              {item.name}
-                              <img src={item.icon} className="ml-1" alt="" />
-                            </span>
+                          <span className="flex flex-col items-center text-[11px] leading-tight mt-1">
+                            <span>{item.name}</span>
+                            <img src={item.icon} className="mt-0.5" alt="" />
                           </span>
                         </a>
                       </li>
@@ -185,31 +158,26 @@ function ItemShop() {
                   </ul>
                 </div>
                 {/* 인기 아이템 */}
-                <div
-                  className="lst"
-                  id="divPopItem"
-                  style={{ display: "block" }}
-                >
-                  <h2 className="sr-only">인기 아이템</h2>
-                  <a
-                    className="btn lst_more"
-                    href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/search.php%253fkword%253d%2526sort%253drecent_cnt%2526ad%253dDESC.html"
-                  >
-                    인기 아이템 더보기
-                  </a>
+                <div className="lst" id="divPopItem" style={{ display: "block" }}>
+                  <div className="flex justify-between items-center mb-2">
+                    <h2 className="font-bold text-lg">인기 아이템</h2>
+                    <a
+                      className="text-sm text-blue-600"
+                      href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/search.php%253fkword%253d%2526sort%253drecent_cnt%2526ad%253dDESC.html"
+                    >
+                      더보기
+                    </a>
+                  </div>
                   <ul className="flex flex-wrap gap-2">
                     {popItems.map((item, idx) => (
-                      <li key={idx}>
+                      <li key={idx} className="w-[100px] text-center">
                         <a href={item.link} className="block">
                           <span className="img relative inline-block">
                             <img src={item.img} alt={item.name} />
                           </span>
-                          <span className="txt_v flex items-center">
-                            <span className="txt_m" />
-                            <span className="txt flex items-center">
-                              {item.name}
-                              <img src={item.icon} className="ml-1" alt="" />
-                            </span>
+                          <span className="flex flex-col items-center text-[11px] leading-tight mt-1">
+                            <span>{item.name}</span>
+                            <img src={item.icon} className="mt-0.5" alt="" />
                           </span>
                         </a>
                       </li>
@@ -244,9 +212,9 @@ function ItemShop() {
                       </div>
                     </div>
                     <div className="w-full flex justify-center mt-2">
-                      <a href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/http://farm.jr.naver.com/donation/">
-                        <img src={btnItemRe} alt="" />
-                      </a>
+                      <Link to="/donation">
+                        <img src={btnItemRe} alt="기부 아이템 받기" />
+                      </Link>
                     </div>
                   </div>
                 </div>

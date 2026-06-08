@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import leftBtnMyfarmGo from "../../assets/sidebar/left_btn_myfarm_go02.gif";
@@ -44,13 +44,13 @@ function RolloverMenuButton({ href, off, on, alt }) {
   );
 }
 
-function TabMenu({ active, setActive, on, off, alt }) {
+function TabMenu({ open, onToggle, on, off, alt }) {
   return (
     <div className="flex flex-col items-center w-[131px] mx-auto mt-2 mb-1">
       <div className="flex">
-        <button className="focus:outline-none" onClick={() => setActive(0)}>
+        <button className="focus:outline-none" onClick={onToggle}>
           <img
-            src={active === 0 ? on : off}
+            src={open ? on : off}
             alt={alt}
             width={131}
             height={29}
@@ -62,8 +62,27 @@ function TabMenu({ active, setActive, on, off, alt }) {
   );
 }
 
+// 페이지를 이동해도 사이드바 탭 펼침 상태를 유지하기 위해 localStorage에 저장한다.
+const readStored = (key, fallback) => {
+  const value = localStorage.getItem(key);
+  return value === null ? fallback : value === "true";
+};
+
 export default function FarmSidebar() {
-  const [tab, setTab] = useState(0);
+  const [farmOpen, setFarmOpen] = useState(() =>
+    readStored("sidebar_farmOpen", true)
+  );
+  const [villageOpen, setVillageOpen] = useState(() =>
+    readStored("sidebar_villageOpen", false)
+  );
+
+  useEffect(() => {
+    localStorage.setItem("sidebar_farmOpen", String(farmOpen));
+  }, [farmOpen]);
+
+  useEffect(() => {
+    localStorage.setItem("sidebar_villageOpen", String(villageOpen));
+  }, [villageOpen]);
 
   return (
     <div className="w-[145px] ml-[19.5px] mr-[12px] mb-[15px] mt-1 flex flex-col items-center font-sans text-[15px]">
@@ -117,34 +136,50 @@ export default function FarmSidebar() {
 
       {/* 탭 메뉴 (농장/마을) */}
       <div className="w-full bg-white rounded-2xl mb-2 flex flex-col items-center">
+        {/* 농장 메뉴 탭 */}
         <TabMenu
-          active={tab}
-          setActive={setTab}
+          open={farmOpen}
+          onToggle={() => setFarmOpen((prev) => !prev)}
           on={tab01d}
           off={tab01u}
           alt="농장 메뉴"
         />
-        <div>
-          {(tab === 0 ? farmMenu : villageMenu).map((item, idx) => (
-            <RolloverMenuButton
-              key={idx}
-              href={item.href}
-              off={item.off}
-              on={item.on}
-              alt={item.alt}
-            />
-          ))}
-        </div>
+        {farmOpen && (
+          <div>
+            {farmMenu.map((item, idx) => (
+              <RolloverMenuButton
+                key={idx}
+                href={item.href}
+                off={item.off}
+                on={item.on}
+                alt={item.alt}
+              />
+            ))}
+          </div>
+        )}
 
-        {/* 친한 농장 목록보기 */}
+        {/* 마을 메뉴 탭 + 친한 농장 목록보기 */}
         <div className="w-full flex flex-col items-center">
           <TabMenu
-            active={tab}
-            setActive={setTab}
+            open={villageOpen}
+            onToggle={() => setVillageOpen((prev) => !prev)}
             on={tab02d}
             off={tab02u}
             alt="마을 메뉴"
           />
+          {villageOpen && (
+            <div>
+              {villageMenu.map((item, idx) => (
+                <RolloverMenuButton
+                  key={idx}
+                  href={item.href}
+                  off={item.off}
+                  on={item.on}
+                  alt={item.alt}
+                />
+              ))}
+            </div>
+          )}
           <button
             className="w-[131px] h-[16px] bg-transparent border-none p-0 mb-4"
             onClick={() =>

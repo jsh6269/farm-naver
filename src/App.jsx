@@ -26,6 +26,12 @@ import PostPage from "./routes/PostPage";
 import ExplorePage from "./routes/ExplorePage";
 import RedVillagePage from "./routes/RedVillagePage";
 import DepartmentPage from "./routes/DepartmentPage";
+import BankPage from "./routes/BankPage";
+import TravelPage from "./routes/TravelPage";
+import BeautyShopPage from "./routes/BeautyShopPage";
+import DonationPage from "./routes/DonationPage";
+import WorkPage from "./routes/WorkPage";
+import CastlePage from "./routes/CastlePage";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -60,6 +66,12 @@ function App() {
           <Route path="/room" element={<VillagePage />} />
           <Route path="/room/red" element={<RedVillagePage />} />
           <Route path="/department" element={<DepartmentPage />} />
+          <Route path="/bank" element={<BankPage />} />
+          <Route path="/travel" element={<TravelPage />} />
+          <Route path="/beautyshop" element={<BeautyShopPage />} />
+          <Route path="/donation" element={<DonationPage />} />
+          <Route path="/work" element={<WorkPage />} />
+          <Route path="/castle" element={<CastlePage />} />
 
           {/* 상단 메뉴 */}
           <Route path="/pointshop" element={<PointShopPage />} />
