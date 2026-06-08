@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import te_051122sale01 from "../assets/sale/te_051122sale01.gif";
 import te_051122sale02 from "../assets/sale/te_051122sale02.gif";
@@ -13,6 +13,7 @@ import blank_041008 from "../assets/sale/blank_041008.gif";
 import img_041008_img01 from "../assets/sale/img_041008_img01.gif";
 import btn_041008_ser from "../assets/sale/btn_041008_ser.gif";
 import btn_next from "../assets/sale/btn_next.gif";
+import btn_pre from "../assets/sale/btn_pre.gif";
 import te_item05 from "../assets/sale/te_item05.gif";
 import te_item06 from "../assets/sale/te_item06.gif";
 import items from "../data/sale";
@@ -42,7 +43,99 @@ function ListHeader({ between = false }) {
   );
 }
 
+const ITEMS_PER_PAGE = 8;
+
+function ItemDetailModal({ item, onClose }) {
+  if (!item) return null;
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 font-gulim"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white rounded-xl w-[320px] p-4 shadow-lg"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="text-center font-bold text-[#F1457B] text-[14px] mb-3">
+          {item.name}
+        </div>
+        <div className="flex justify-center mb-3">
+          <div className="bg-[#FFEAF1] w-[90px] h-[90px] flex items-center justify-center rounded-lg">
+            <img src={item.img} alt="" className="w-[64px] h-[64px]" />
+          </div>
+        </div>
+        <table className="w-full text-[12px] text-[#555]">
+          <tbody>
+            <tr>
+              <td className="py-1 pr-2 text-[#F1457B] font-bold w-[64px] align-top">
+                설명
+              </td>
+              <td className="py-1">{item.descFull || item.desc}</td>
+            </tr>
+            <tr>
+              <td className="py-1 pr-2 text-[#F1457B] font-bold">가격</td>
+              <td className="py-1">{item.price}</td>
+            </tr>
+            <tr>
+              <td className="py-1 pr-2 text-[#F1457B] font-bold">아이디</td>
+              <td className="py-1">{item.user}</td>
+            </tr>
+            <tr>
+              <td className="py-1 pr-2 text-[#F1457B] font-bold">종료시간</td>
+              <td className="py-1">{item.end}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div className="text-center mt-4">
+          <button
+            onClick={onClose}
+            className="bg-[#F1457B] text-white text-[12px] px-5 py-1.5 rounded-full cursor-pointer"
+          >
+            닫기
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SaleComponent() {
+  const [page, setPage] = useState(1);
+  const [selected, setSelected] = useState(null);
+
+  // 검색 입력(편집 중) 상태와 실제 적용된 검색 조건을 분리한다.
+  const [field, setField] = useState("item_name");
+  const [text, setText] = useState("");
+  const [query, setQuery] = useState({ field: "item_name", keyword: "" });
+
+  const filtered = React.useMemo(() => {
+    const kw = query.keyword.trim().toLowerCase();
+    if (!kw) return items;
+    return items.filter((it) => {
+      const target =
+        query.field === "user_id" ? it.user : it.name;
+      return String(target).toLowerCase().includes(kw);
+    });
+  }, [query]);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+
+  const start = (page - 1) * ITEMS_PER_PAGE;
+  const pageItems = filtered.slice(start, start + ITEMS_PER_PAGE);
+
+  const goTo = (p) => {
+    setPage(Math.min(Math.max(1, p), totalPages));
+  };
+
+  const runSearch = () => {
+    setQuery({ field, keyword: text });
+    setPage(1);
+  };
+
+  const PAGE_BLOCK = 10;
+  const blockStart = Math.floor((page - 1) / PAGE_BLOCK) * PAGE_BLOCK + 1;
+  const blockEnd = Math.min(blockStart + PAGE_BLOCK - 1, totalPages);
+
   return (
     <div className="w-[555px] bg-white mx-auto text-[12px]">
       {/* 서브타이틀 */}
@@ -100,42 +193,46 @@ function SaleComponent() {
 
       {/* 아이템 리스트 */}
       <div className="w-[535px] mx-auto">
-        {items.map((item, idx) => (
-          <React.Fragment key={item.id}>
-            {idx === 5 && <ListHeader between />}
-            <div className="flex items-center h-[50px]">
-              <div className="w-[50px] flex items-center justify-center">
-                <div className="bg-[#D7D7D7] w-[42px] h-[42px] flex items-center justify-center">
-                  <a href={item.link}>
-                    <img src={item.img} alt="" className="w-[40px] h-[40px]" />
-                  </a>
-                </div>
-              </div>
-              <div className="w-[124px] flex items-center">
-                <a href={item.link}>
-                  <span className="text-[#373535]">{item.name}</span>
-                </a>
-              </div>
-              <div className="w-[136px]">
-                <a href={item.link}>
-                  <span className="text-[#666666]">{item.desc}</span>
-                </a>
-              </div>
-              <div className="w-[63px] text-center text-[#666666]">
-                {item.price}
-              </div>
-              <div className="w-[83px] text-center text-[#666666]">
-                {item.user}
-              </div>
-              <div
-                className={`w-[70px] text-center ${
-                  idx < 5 ? "text-[#F1457B]" : "text-[#666666]"
-                }`}
-              >
-                {item.end}
+        {pageItems.length === 0 && (
+          <div className="h-[100px] flex items-center justify-center text-[#999]">
+            검색 결과가 없습니다.
+          </div>
+        )}
+        {pageItems.map((item) => (
+          <div key={item.id} className="flex items-center h-[50px]">
+            <div className="w-[50px] flex items-center justify-center">
+              <div className="bg-white border border-[#E5E5E5] w-[42px] h-[42px] flex items-center justify-center">
+                <button onClick={() => setSelected(item)} className="cursor-pointer">
+                  <img src={item.img} alt="" className="w-[40px] h-[40px]" />
+                </button>
               </div>
             </div>
-          </React.Fragment>
+            <div className="w-[124px] flex items-center">
+              <button
+                onClick={() => setSelected(item)}
+                className="text-left hover:underline cursor-pointer"
+              >
+                <span className="text-[#373535]">{item.name}</span>
+              </button>
+            </div>
+            <div className="w-[136px]">
+              <button
+                onClick={() => setSelected(item)}
+                className="text-left hover:underline cursor-pointer"
+              >
+                <span className="text-[#666666]">{item.desc}</span>
+              </button>
+            </div>
+            <div className="w-[63px] text-center text-[#666666]">
+              {item.price}
+            </div>
+            <div className="w-[83px] text-center text-[#666666]">
+              {item.user}
+            </div>
+            <div className="w-[70px] text-center text-[#666666]">
+              {item.end}
+            </div>
+          </div>
         ))}
       </div>
       {/* 검색 영역 */}
@@ -147,44 +244,76 @@ function SaleComponent() {
             alt=""
             className="w-[71px] h-[21px] align-middle"
           />
-          <select className="text-[12px] text-[#3E3E3E] w-[90px] h-[20px] pl-[5px] ml-2">
+          <select
+            value={field}
+            onChange={(e) => setField(e.target.value)}
+            className="text-[12px] text-[#3E3E3E] w-[90px] h-[20px] pl-[5px] ml-2 border border-[#C4C4C4]"
+          >
             <option value="item_name">아이템 이름</option>
             <option value="user_id">아이디</option>
           </select>
           <input
             type="text"
-            className="text-[12px] text-[#3E3E3E] w-[205px] h-[20px] pl-[5px] ml-2"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") runSearch();
+            }}
+            className="text-[12px] text-[#3E3E3E] w-[205px] h-[20px] pl-[5px] ml-2 border border-[#C4C4C4]"
           />
-          <a href="#">
+          <button onClick={runSearch} className="cursor-pointer">
             <img
               src={btn_041008_ser}
               alt="검색"
               className="w-[55px] h-[22px] align-middle ml-2"
             />
-          </a>
+          </button>
         </div>
         <div className="h-5" />
       </div>
-      {/* 페이지네이션 */}
+      {/* 페이지네이션 (10개 단위 묶음) */}
       <div className="w-[462px] mx-auto">
         <div className="h-2.5" />
         <div className="flex items-center justify-center">
-          <b className="text-black">1</b>&nbsp;&nbsp;
-          {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+          {blockStart > 1 && (
+            <button
+              onClick={() => goTo(blockStart - 1)}
+              className="cursor-pointer mr-[5px]"
+            >
+              <img
+                src={btn_pre}
+                alt="이전"
+                className="align-middle w-[45px] h-[18px]"
+              />
+            </button>
+          )}
+          {Array.from(
+            { length: blockEnd - blockStart + 1 },
+            (_, i) => blockStart + i
+          ).map((n) => (
             <React.Fragment key={n}>
-              <a href="#">
-                <span className="text-black">{n}</span>
-              </a>
+              {n === page ? (
+                <b className="text-black">{n}</b>
+              ) : (
+                <button onClick={() => goTo(n)} className="cursor-pointer">
+                  <span className="text-black hover:underline">{n}</span>
+                </button>
+              )}
               &nbsp;&nbsp;
             </React.Fragment>
           ))}
-          <a href="#">
-            <img
-              src={btn_next}
-              alt="다음"
-              className="align-middle ml-[5px] w-[45px] h-[18px]"
-            />
-          </a>
+          {blockEnd < totalPages && (
+            <button
+              onClick={() => goTo(blockEnd + 1)}
+              className="cursor-pointer"
+            >
+              <img
+                src={btn_next}
+                alt="다음"
+                className="align-middle ml-[5px] w-[45px] h-[18px]"
+              />
+            </button>
+          )}
         </div>
         <div className="h-2.5" />
       </div>
@@ -194,6 +323,9 @@ function SaleComponent() {
         <div className="flex-1" />
         <img src={te_item06} alt="" className="w-[14px] h-[14px]" />
       </div>
+
+      {/* 아이템 상세 모달 */}
+      <ItemDetailModal item={selected} onClose={() => setSelected(null)} />
     </div>
   );
 }
