@@ -1,0 +1,233 @@
+[
+  {
+    "id": "otter",
+    "title": "title_otter.gif",
+    "colors": [
+      "_green",
+      "_pink",
+      "_blue"
+    ]
+  },
+  {
+    "id": "owl",
+    "title": "title_owl.gif",
+    "colors": [
+      "_coral",
+      "_turkeygreen",
+      "_blue"
+    ]
+  },
+  {
+    "id": "lion",
+    "title": "title_lion.gif",
+    "colors": [
+      "_black",
+      "_blue",
+      "_green"
+    ]
+  },
+  {
+    "id": "goatmxj",
+    "title": "title_goatmxj.gif",
+    "colors": [
+      "_pink",
+      "_green",
+      "_blue"
+    ]
+  },
+  {
+    "id": "c_tktma",
+    "title": "title_c_tktma.gif",
+    "colors": []
+  },
+  {
+    "id": "c_ekfkawnl",
+    "title": "title_c_ekfkawnl.gif",
+    "colors": []
+  },
+  {
+    "id": "c_did",
+    "title": "title_c_did.gif",
+    "colors": []
+  },
+  {
+    "id": "c_rhdiddl",
+    "title": "title_c_rhdiddl.gif",
+    "colors": []
+  },
+  {
+    "id": "dicerorhininae",
+    "title": "title_dicerorhininae.gif",
+    "colors": [
+      "_violet",
+      "_red",
+      "_green"
+    ]
+  },
+  {
+    "id": "hedgehog",
+    "title": "title_hedgehog.gif",
+    "colors": [
+      "_magenta",
+      "_yellow",
+      "_gray",
+      "_violet"
+    ]
+  },
+  {
+    "id": "ghfkddl",
+    "title": "title_ghfkddl.gif",
+    "colors": [
+      "_red",
+      "_green",
+      "_blue"
+    ]
+  },
+  {
+    "id": "wolf",
+    "title": "title_wolf.gif",
+    "colors": [
+      "_violet",
+      "_pink",
+      "_gray"
+    ]
+  },
+  {
+    "id": "turtle",
+    "title": "title_turtle.gif",
+    "colors": [
+      "_pink",
+      "_yellow",
+      "_red"
+    ]
+  },
+  {
+    "id": "frog",
+    "title": "title_frog.gif",
+    "colors": [
+      "_blue",
+      "_lilac",
+      "_yellow"
+    ]
+  },
+  {
+    "id": "swan",
+    "title": "title_swan.gif",
+    "colors": [
+      "_black",
+      "_green",
+      "_brown",
+      "_blue"
+    ]
+  },
+  {
+    "id": "sheep",
+    "title": "title_sheep.gif",
+    "colors": [
+      "_yellow",
+      "_blue",
+      "_green"
+    ]
+  },
+  {
+    "id": "penguin",
+    "title": "title_penguin.gif",
+    "colors": [
+      "_yellow",
+      "_red",
+      "_black"
+    ]
+  },
+  {
+    "id": "sichu",
+    "title": "title_sichu.gif",
+    "colors": [
+      "_pink",
+      "_blue",
+      "_green"
+    ]
+  },
+  {
+    "id": "bluebird",
+    "title": "title_bluebird.gif",
+    "colors": [
+      "_white",
+      "_red",
+      "_yellow"
+    ]
+  },
+  {
+    "id": "chipmunk",
+    "title": "title_chipmunk.gif",
+    "colors": [
+      "_violet",
+      "_yellow",
+      "_green"
+    ]
+  },
+  {
+    "id": "dolphin",
+    "title": "title_dolphin.gif",
+    "colors": [
+      "_green",
+      "_orange",
+      "_pattern"
+    ]
+  },
+  {
+    "id": "monster",
+    "title": "title_monster.gif",
+    "colors": [
+      "_red",
+      "_green",
+      "_blue"
+    ]
+  },
+  {
+    "id": "rabbit",
+    "title": "title_rabbit.gif",
+    "colors": [
+      "_blue",
+      "_green",
+      "_yellow"
+    ]
+  },
+  {
+    "id": "dog",
+    "title": "title_dog.gif",
+    "colors": [
+      "_blue",
+      "_pink",
+      "_green"
+    ]
+  },
+  {
+    "id": "pig",
+    "title": "title_pig.gif",
+    "colors": [
+      "_blue",
+      "_turkeygreen",
+      "_yellowdeep",
+      "_gold"
+    ]
+  },
+  {
+    "id": "cat",
+    "title": "title_cat.gif",
+    "colors": [
+      "_yellow",
+      "_olivegreen",
+      "_turkeygreen"
+    ]
+  },
+  {
+    "id": "polarbear",
+    "title": "title_polarbear.gif",
+    "colors": [
+      "_bluecelest",
+      "_brown",
+      "_black",
+      "_"
+    ]
+  }
+]

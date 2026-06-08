@@ -56,9 +56,27 @@ const PetShopPage = () => {
               </div>
             </div>
             <div className="flex justify-center flex-wrap gap-x-[42px] pl-1.5 gap-y-4 pt-4">
-              <img src={banner1} alt="새로운 동물" className="w-[195px]" />
-              <img src={banner2} alt="동물 입양" className="w-[195px]" />
-              <img src={banner3} alt="동물 미용실" className="w-[195px]" />
+              <Link to="/petshop/shop">
+                <img
+                  src={banner1}
+                  alt="새로운 동물"
+                  className="w-[195px] cursor-pointer"
+                />
+              </Link>
+              <Link to="/petshop/adopt">
+                <img
+                  src={banner2}
+                  alt="동물 입양"
+                  className="w-[195px] cursor-pointer"
+                />
+              </Link>
+              <Link to="/beautyshop">
+                <img
+                  src={banner3}
+                  alt="동물 미용실"
+                  className="w-[195px] cursor-pointer"
+                />
+              </Link>
             </div>
           </div>
         </div>

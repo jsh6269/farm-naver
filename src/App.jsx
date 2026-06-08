@@ -13,6 +13,9 @@ import PointShopPage from "./routes/PointShopPage";
 import ItemShopPage from "./routes/ItemShopPage";
 import SalePage from "./routes/SalePage";
 import PetShopPage from "./routes/PetShopPage";
+import PetShopStoryPage from "./routes/PetShopStoryPage";
+import PetShopShopPage from "./routes/PetShopShopPage";
+import PetShopAdoptPage from "./routes/PetShopAdoptPage";
 
 import CrystalPage from "./routes/CrystalPage";
 import ComicPage from "./routes/ComicPage";
@@ -78,6 +81,9 @@ function App() {
           <Route path="/itemshop" element={<ItemShopPage />} />
           <Route path="/sale" element={<SalePage />} />
           <Route path="/petshop" element={<PetShopPage />} />
+          <Route path="/petshop/story" element={<PetShopStoryPage />} />
+          <Route path="/petshop/shop" element={<PetShopShopPage />} />
+          <Route path="/petshop/adopt" element={<PetShopAdoptPage />} />
 
           {/* 하단 메뉴 */}
           <Route path="/crystal" element={<CrystalPage />} />
