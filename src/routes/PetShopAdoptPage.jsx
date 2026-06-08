@@ -56,19 +56,21 @@ function StatBar({ label, color, pct }) {
 
 function SubHeader() {
   return (
-    <div className="px-1.5">
-      <img src={ui("sub_tit23.gif")} alt="동물 입양" />
-      <img src={ui("img_protect03.gif")} alt="입양 안내" className="mt-1" />
-    </div>
+    <>
+      <img src={ui("sub_tit23.gif")} alt="동물 입양" className="ml-2.5" />
+      <img
+        src={ui("img_protect03.gif")}
+        alt="입양 안내"
+        className="block w-full mt-1"
+      />
+    </>
   );
 }
 
 function FrameWrap({ children }) {
   return (
-    <div className="bg-[#F6F1FF] mt-2 flex">
-      <img src={ui("img_select_left.gif")} alt="" className="self-stretch" />
-      <div className="bg-white flex-1 px-3 py-5">{children}</div>
-      <img src={ui("img_select_right.gif")} alt="" className="self-stretch" />
+    <div className="bg-gradient-to-b from-[#fec4d8] to-[#f6f1ff] rounded-b-2xl px-2 pb-5">
+      <div className="bg-white rounded-b-lg px-4 py-4 mx-[7px] w-[510px]">{children}</div>
     </div>
   );
 }
@@ -198,7 +200,7 @@ const PetShopAdoptPage = () => (
         <Sidebar />
       </span>
     </div>
-    <div className="w-[555px] bg-white rounded-2xl mt-[33px] mr-5 mb-6">
+    <div className="w-[555px] self-start bg-white rounded-2xl mt-[33px] mr-5 mb-6">
       <AdoptContent />
     </div>
   </div>
