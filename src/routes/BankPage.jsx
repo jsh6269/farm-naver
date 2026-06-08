@@ -81,7 +81,7 @@ const BankPage = () => (
         <Sidebar />
       </span>
     </div>
-    <div className="bg-white rounded-2xl mt-[33px] mr-5 mb-6">
+    <div className="rounded-2xl mt-[33px] mr-5 mb-6">
       <BankScene />
     </div>
   </div>

@@ -267,7 +267,7 @@ const DepartmentPage = () => (
         <Sidebar />
       </span>
     </div>
-    <div className="w-[555px] bg-white rounded-2xl mt-[33px] mr-5 mb-6">
+    <div className="w-[555px] h-[885px] bg-white rounded-2xl mt-[33px] mr-5 mb-6">
       <img
         src={title_store}
         alt="페스티벌 헤더"

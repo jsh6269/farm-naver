@@ -27,7 +27,7 @@ const CastlePage = () => (
         <Sidebar />
       </span>
     </div>
-    <div className="w-[555px] bg-white rounded-2xl mt-[33px] mr-5 mb-6 flex flex-col items-center">
+    <div className="w-[555px] h-[600px] bg-white rounded-2xl mt-[33px] mr-5 mb-6 flex flex-col items-center">
       <img
         src={topBanner}
         width={555}

@@ -117,13 +117,13 @@ function AdoptDetail({ entry, onBack }) {
   const pct = Math.min(100, Math.round((entry.status / GROWTH_MAX) * 100));
   const baseImg = `${entry.petId}.gif`;
   const adopt = () =>
-    window.alert("입양은 로그인 후 이용할 수 있어요. (로그인 기능은 제공되지 않습니다)");
+    window.alert("입양은 로그인 후 이용할 수 있어요.");
 
   return (
     <div className="w-[537px] mx-auto pt-2 pb-4 font-gulim text-[12px]">
       <SubHeader />
       <FrameWrap>
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center mt-4">
           <div className="w-[141px] flex items-start justify-center">
             <img
               src={pet(baseImg)}
@@ -131,7 +131,7 @@ function AdoptDetail({ entry, onBack }) {
               className="max-h-[135px] mt-1"
             />
           </div>
-          <div className="w-[168px] flex items-start justify-center pt-1">
+          <div className="flex items-start justify-center pt-1 mr-6">
             <img src={ui("img_protect04.gif")} alt="" />
           </div>
           <div className="w-[154px]">
