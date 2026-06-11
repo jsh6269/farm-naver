@@ -7,9 +7,7 @@ export default function PageShell({ bgClassName, contentClassName = "", breadcru
   return (
     <div className={`${bgClassName} rounded-2xl flex items-start`}>
       <aside className={`mt-1 shrink-0 grow-0 font-gulim ${SIDEBAR_COL}`}>
-        <nav
-          className={`text-[12px] text-start ml-5 pr-1 leading-snug break-words max-w-full ${SIDEBAR_COL}`}
-        >
+        <nav className="text-[12px] text-start ml-5 whitespace-nowrap">
           {breadcrumb}
         </nav>
         <Sidebar />
