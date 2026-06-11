@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
+import { publicUrl } from "../utils/publicUrl";
 
 const RUFFLE_SRC = "https://unpkg.com/@ruffle-rs/ruffle";
 
-export default function FlashPlayer({ swf, width = 660, height = 552 }) {
+export default function FlashPlayer({ swf, path, width = 660, height = 552 }) {
   const holder = useRef(null);
-  const BASE = import.meta.env.BASE_URL;
-  const url = `${BASE}${BASE.endsWith("/") ? "" : "/"}games/${swf}`;
+  const url = publicUrl(path ?? `games/${swf}`);
 
   useEffect(() => {
     let cancelled = false;
