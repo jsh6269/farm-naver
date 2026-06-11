@@ -1,0 +1,82 @@
+﻿L1	flowerbox	꽃 바구니 만들기
+L1	viking	신나는 놀이동산 바이킹
+L1	snowcraft	눈 몬스터의 침입
+L1	magictraining	초보마녀의 마법실습
+L1	alba	와글와글 장터 아르바이트
+L1	influenza	콜록콜록 독감주의보
+L1	post	우체국에서 아르바이트
+L1	puzzle	마법왕을 향하여
+L1	circus	서커스 줄타기
+L1	diskthrow	크라라의 원반던지기
+L1	escape	크라라와 이상한 방
+L1	fishing	뭉게뭉게 낚시 대회
+L1	cookingshop	쟈스민의 김밥만들기
+L1	exploration	북쪽탑 동물 구조하기
+L1	battlequiz	퀴즈 대결
+L1	mothqueen	거대나방 막기
+L1	carrot	당근농장 아르바이트
+L1	edible	과일깎기 기네스북
+L1	maze	크라라의 집 찾기
+L1	dolphinshow	동물농장 돌고래 쇼~
+L1	taxi	택시 드라이버
+L1	wool	마법숲의 양털깎기
+L1	helpanimals	동물구출 대작전
+L1	clrara	크라라의 외출
+L1	snowmonstar	눈 몬스터 잡기
+L1	monkey	원숭이 접시 받기
+L1	witch	마녀의 보물 상자 훔치기
+L1	bread	빵공장 아르바이트!
+L1	weasel	족제비 줄넘기
+L1	pig	인형가게 돼지 찾기
+L1	magic	라즈벨의 마법대결
+L1	goods	크라라의 물건 찾기
+L1	catch	뭉게뭉게 아이템 뽑기
+L1	jump	점프점프 하늘 열매따기
+L1	oddeven	홀짝
+L1	flower	꽃밭에서 꽃세기
+L1	dart	다트게임
+L1	push	아슬아슬 수레밀기
+L1	pipe	동물농장 배관공
+L2	flowerbox	꽃 바구니 만들기
+L2	viking	신나는 놀이동산 바이킹
+L2	snowcraft	눈 몬스터의 침입
+L2	magictraining	초보마녀의 마법실습
+L2	alba	와글와글 장터 아르바이트
+L2	influenza	콜록콜록 독감주의보
+L2	post	우체국에서 아르바이트
+L2	puzzle	마법왕을 향하여
+L2	circus	서커스 줄타기
+L2	escape	크라라와 이상한 방
+L2	fishing	뭉게뭉게 낚시 대회
+L2	cookingshop	쟈스민의 김밥만들기
+L2	exploration	북쪽탑 동물 구조하기
+L2	goods	빌 아저씨의 물건 찾기
+L2	catch	뭉게뭉게 아이템 뽑기
+L2	jump	점프점프 하늘 열매따기
+L2	oddeven	홀짝
+L2	flower	꽃밭에서 꽃세기
+L2	dart	다트게임
+L2	push	아슬아슬 수레밀기
+L2	pipe	동물농장 배관공
+L3	flowerbox	꽃 바구니 만들기
+L3	viking	신나는 놀이동산 바이킹
+L3	snowcraft	눈 몬스터의 침입
+L3	magictraining	초보마녀의 마법실습
+L3	alba	와글와글 장터 아르바이트
+L3	influenza	콜록콜록 독감주의보
+L3	post	우체국에서 아르바이트
+L3	puzzle	마법왕을 향하여
+L3	circus	서커스 줄타기
+L3	escape	크라라와 이상한 방
+L3	fishing	뭉게뭉게 낚시 대회
+L3	cookingshop	쟈스민의 김밥만들기
+L3	exploration	북쪽탑 동물 구조하기
+L3	magic	라즈벨의 마법대결
+L3	goods	체리의 물건 찾기
+L3	catch	뭉게뭉게 아이템 뽑기
+L3	jump	점프점프 하늘 열매따기
+L3	oddeven	홀짝
+L3	flower	꽃밭에서 꽃세기
+L3	dart	다트게임
+L3	push	아슬아슬 수레밀기
+L3	pipe	동물농장 배관공

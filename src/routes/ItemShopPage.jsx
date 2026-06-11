@@ -43,7 +43,7 @@ function ItemShop() {
             <div className="bg-white mb-[15px] w-[557px] rounded-xl">
               <div className="px-3 py-2">
                 <div className="flex justify-between items-center mb-2">
-                  <h2 className="font-bold text-lg">테마 아이템</h2>
+                  <h2 className="font-bold text-[16px]">테마 아이템</h2>
                   <a
                     className="text-sm text-blue-600"
                     href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/theme_list.php.html"
@@ -160,7 +160,7 @@ function ItemShop() {
                 {/* 인기 아이템 */}
                 <div className="lst" id="divPopItem" style={{ display: "block" }}>
                   <div className="flex justify-between items-center mb-2">
-                    <h2 className="font-bold text-lg">인기 아이템</h2>
+                    <h2 className="font-bold text-[16px]">인기 아이템</h2>
                     <a
                       className="text-sm text-blue-600"
                       href="https://jsh6269.github.io/farm.jr.naver.com/itemshop/search.php%253fkword%253d%2526sort%253drecent_cnt%2526ad%253dDESC.html"

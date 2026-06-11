@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 
 import point050516_title from "../assets/pointshop/point050516_title.gif";
@@ -76,18 +77,15 @@ function PointShop() {
         </div>
         {/* 게임목록 버튼 */}
         <div className="w-[535px] flex flex-row justify-center items-center mb-4">
-          <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/list.php%253flevel%253d1.html">
-            <img src={btn_level01} alt="" width={170} height={102} />
-          </a>
-          <a
-            href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/list.php%253flevel%253d2.html"
-            className="mx-[10px]"
-          >
-            <img src={btn_level02} alt="" width={170} height={102} />
-          </a>
-          <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/list.php%253flevel%253d3.html">
-            <img src={btn_level03} alt="" width={170} height={102} />
-          </a>
+          <Link to="/pointshop/level/1" className="cursor-pointer">
+            <img src={btn_level01} alt="초급" width={170} height={102} />
+          </Link>
+          <Link to="/pointshop/level/2" className="mx-[10px] cursor-pointer">
+            <img src={btn_level02} alt="중급" width={170} height={102} />
+          </Link>
+          <Link to="/pointshop/level/3" className="cursor-pointer">
+            <img src={btn_level03} alt="고급" width={170} height={102} />
+          </Link>
         </div>
         {/* 플래시 게임 */}
         <div className="w-[540px]">

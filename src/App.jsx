@@ -10,6 +10,8 @@ import HomePage from "./routes/HomePage";
 import VillagePage from "./routes/VillagePage";
 
 import PointShopPage from "./routes/PointShopPage";
+import PointShopLevelPage from "./routes/PointShopLevelPage";
+import PointShopGamePage from "./routes/PointShopGamePage";
 import ItemShopPage from "./routes/ItemShopPage";
 import SalePage from "./routes/SalePage";
 import PetShopPage from "./routes/PetShopPage";
@@ -78,6 +80,8 @@ function App() {
 
           {/* 상단 메뉴 */}
           <Route path="/pointshop" element={<PointShopPage />} />
+          <Route path="/pointshop/level/:level" element={<PointShopLevelPage />} />
+          <Route path="/pointshop/play/:id/:level" element={<PointShopGamePage />} />
           <Route path="/itemshop" element={<ItemShopPage />} />
           <Route path="/sale" element={<SalePage />} />
           <Route path="/petshop" element={<PetShopPage />} />

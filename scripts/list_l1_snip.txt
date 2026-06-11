@@ -1,0 +1,48 @@
+﻿contents -->
+<table bgcolor="FFFFFF" border="0" cellpadding="0" cellspacing="0" height="100%" width="555">
+<tr>
+<td height="14"><img border="0" height="14" src="./new_pet/te_school05.gif" width="14"/></td>
+<td width="527"></td>
+<td><img border="0" height="14" src="./new_pet/te_school06.gif" width="14"/></td>
+</tr>
+<tr>
+<td align="center" colspan="3" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="535">
+<tr>
+<td colspan="2"><img hspace="10" src="./new_pet/level1.gif"/></td>
+</tr>
+<tr>
+<td align="right" width="185"><img src="./new_pet/level1_ani.gif"/></td>
+<td><img src="./new_pet/level1_desc.gif"/></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="472">
+<tr>
+<td width="131">
+<table border="0" cellpadding="0" cellspacing="0" width="131">
+<tr>
+<td><a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/http://farm.jr.naver.com/pointshop/flowerbox/v1_flower.php.html"><img border="0" height="101" src="./new_pet/game/game_43_01.gif" width="131"/></a></td>
+</tr>
+<tr>
+<td align="center" height="31"><a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/http://farm.jr.naver.com/pointshop/flowerbox/v1_flower.php.html" id="nodeco"><font color="176AA4" id="size1"><b>꽃 바구니 만들기</b></font></a></td>
+</tr>
+</table>
+</td><td width="39"></td><td width="131">
+<table border="0" cellpadding="0" cellspacing="0" width="131">
+<tr>
+<td><a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/http://farm.jr.naver.com/pointshop/viking/v1_viking.php.html"><img border="0" height="101" src="./new_pet/game/game_42_01.gif" width="131"/></a></td>
+</tr>
+<tr>
+<td align="center" height="31"><a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/http://farm.jr.naver.com/pointshop/viking/v1_viking.php.html" id="nodeco"><font color="176AA4" id="size1"><b>신나는 놀이동산 바이킹</b></font></a></td>
+</tr>
+</table>
+</td><td width="39"></td><td width="131">
+<table border="0" cellpadding="0" cellspacing="0" width="131">
+<tr>
+<td><a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/http://farm.jr.naver.com/pointshop/snowcraft/v1_snowcraft.php.html"><img border="0" height="101" src="./new_pet/game/game_41_01.gif" width="131"/></a></td>
+</tr>
+<tr>
+<td align="center" height="31"><a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/http://farm.jr.naver.com/pointshop/snowcraft/v1_snowcraft.php.html" id="nodeco"><font color="176AA4" id="size1"><b>눈 몬스터의 침입</b></font></a></td>
+</tr>
+</table>
+</td></tr><tr><td colspan="5" 
