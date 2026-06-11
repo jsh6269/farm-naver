@@ -1,4 +1,4 @@
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 import te_left01 from "../assets/department/te_left01.gif";
 import te_left02 from "../assets/department/te_left02.gif";
 import te_left03 from "../assets/department/te_left03.gif";
@@ -257,25 +257,25 @@ function DepartmentStore() {
 }
 
 const DepartmentPage = () => (
-  <div className="bg-[#FFF78C] rounded-2xl flex">
-    <div className="mt-1 font-gulim">
-      <span className="text-[12px] text-start ml-5">
+  <PageShell
+    bgClassName="bg-[#FFF78C]"
+    contentClassName="w-[555px] h-[885px] bg-white rounded-2xl mt-[33px] mr-5 mb-6"
+    breadcrumb={
+      <>
         <a href="/" className="text-blue-700">
           동물농장
         </a>
         &nbsp; &gt; &nbsp; 백화점
-        <Sidebar />
-      </span>
-    </div>
-    <div className="w-[555px] h-[885px] bg-white rounded-2xl mt-[33px] mr-5 mb-6">
-      <img
-        src={title_store}
-        alt="페스티벌 헤더"
-        className="rounded-t-2xl mt-2.5"
-      />
-      <DepartmentStore />
-    </div>
-  </div>
+      </>
+    }
+  >
+    <img
+      src={title_store}
+      alt="페스티벌 헤더"
+      className="rounded-t-2xl mt-2.5"
+    />
+    <DepartmentStore />
+  </PageShell>
 );
 
 export default DepartmentPage;

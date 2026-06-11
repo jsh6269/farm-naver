@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 import pets from "../data/petshopPets.json";
 import noDye from "../assets/petshop/nono0221.gif";
 
@@ -194,9 +194,11 @@ function ShopContent() {
 }
 
 const PetShopShopPage = () => (
-  <div className="bg-[#ccb4fd] rounded-2xl flex">
-    <div className="mt-1 font-gulim">
-      <span className="text-[12px] text-start ml-5">
+  <PageShell
+    bgClassName="bg-[#ccb4fd]"
+    contentClassName="w-[555px] bg-white rounded-2xl mt-[33px] mr-5 mb-6"
+    breadcrumb={
+      <>
         <a href="/" className="text-blue-700">
           동물농장
         </a>
@@ -205,13 +207,11 @@ const PetShopShopPage = () => (
           동물가게
         </Link>
         &nbsp; &gt; &nbsp; 선택의 방
-        <Sidebar />
-      </span>
-    </div>
-    <div className="w-[555px] bg-white rounded-2xl mt-[33px] mr-5 mb-6">
-      <ShopContent />
-    </div>
-  </div>
+      </>
+    }
+  >
+    <ShopContent />
+  </PageShell>
 );
 
 export default PetShopShopPage;

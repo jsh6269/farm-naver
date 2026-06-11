@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 
 import mainBg from "../assets/itemshop/main_bg.gif";
 import btnItem01 from "../assets/itemshop/btn_item01.gif";
@@ -264,20 +264,20 @@ function ItemShop() {
 
 const ItemShopPage = () => {
   return (
-    <div className="bg-[#fff466] rounded-2xl flex">
-      <div className="mt-1" style={{ fontFamily: "굴림" }}>
-        <span className="text-[12px] text-start ml-5">
+    <PageShell
+      bgClassName="bg-[#fff466]"
+      contentClassName="w-[570px] bg-white rounded-2xl mt-[33px] mr-6.5 mb-5"
+      breadcrumb={
+        <>
           <a href="/" className="text-blue-700">
             동물농장
           </a>
           &nbsp; &gt; &nbsp; 아이템 샵
-          <Sidebar />
-        </span>
-      </div>
-      <div className="w-[570px] bg-white rounded-2xl mt-[33px] mr-6.5 mb-5">
-        <ItemShop />
-      </div>
-    </div>
+        </>
+      }
+    >
+      <ItemShop />
+    </PageShell>
   );
 };
 export default ItemShopPage;

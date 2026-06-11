@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 import petshopTitle from "../assets/petshop/sub_tit26.gif";
 import petshopHeader from "../assets/petshop/img_protect07.gif";
 import subHeader from "../assets/petshop/petshop_060727_img.gif";
@@ -102,17 +102,18 @@ const PetShopPage = () => {
   const [popup, setPopup] = useState(null);
 
   return (
-    <div className="bg-[#ccb4fd] rounded-2xl flex">
-      <div className="mt-1 font-gulim">
-        <span className="text-[12px] text-start ml-5">
+    <PageShell
+      bgClassName="bg-[#ccb4fd]"
+      contentClassName="w-[550px] h-[842px] bg-white rounded-2xl mt-[33px] mr-5 mb-[30px]"
+      breadcrumb={
+        <>
           <a href="/" className="text-blue-700">
             동물농장
           </a>
           &nbsp; &gt; &nbsp; 동물가게
-          <Sidebar />
-        </span>
-      </div>
-      <div className="w-[550px] h-[842px] bg-white rounded-2xl mt-[33px] mr-5 mb-[30px]">
+        </>
+      }
+    >
         <div className="relative">
           <img
             src={petshopTitle}
@@ -174,9 +175,8 @@ const PetShopPage = () => {
             </div>
           </div>
         </div>
-      </div>
       <PetPopup kind={popup} onClose={() => setPopup(null)} />
-    </div>
+    </PageShell>
   );
 };
 export default PetShopPage;

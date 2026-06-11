@@ -1,4 +1,4 @@
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 
 import bgTop from "../assets/bank/bg_main_bank01.gif";
 import bgMid from "../assets/bank/bg_main_bank_animal_red.gif";
@@ -71,20 +71,20 @@ const BankScene = () => (
 );
 
 const BankPage = () => (
-  <div className="bg-[#ff9000] rounded-2xl flex">
-    <div className="mt-1 font-gulim">
-      <span className="text-[12px] text-start ml-5">
+  <PageShell
+    bgClassName="bg-[#ff9000]"
+    contentClassName="rounded-2xl mt-[33px] mr-5 mb-6"
+    breadcrumb={
+      <>
         <a href="/" className="text-blue-700">
           동물농장
         </a>
         &nbsp; &gt; &nbsp; 은행
-        <Sidebar />
-      </span>
-    </div>
-    <div className="rounded-2xl mt-[33px] mr-5 mb-6">
-      <BankScene />
-    </div>
-  </div>
+      </>
+    }
+  >
+    <BankScene />
+  </PageShell>
 );
 
 export default BankPage;

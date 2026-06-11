@@ -1,4 +1,4 @@
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 
 import topBanner from "../assets/castle/castlemain_top_00.gif";
 import img01 from "../assets/castle/castlemain_img01.gif";
@@ -17,17 +17,18 @@ import btnTakeItem from "../assets/castle/btn_castle_takeitem.gif";
 const BASE = "https://jsh6269.github.io/farm.jr.naver.com/castle";
 
 const CastlePage = () => (
-  <div className="bg-[#FFF78C] rounded-2xl flex">
-    <div className="mt-1 font-gulim">
-      <span className="text-[12px] text-start ml-5">
+  <PageShell
+    bgClassName="bg-[#FFF78C]"
+    contentClassName="w-[555px] h-[600px] bg-white rounded-2xl mt-[33px] mr-5 mb-6 flex flex-col items-center"
+    breadcrumb={
+      <>
         <a href="/" className="text-blue-700">
           동물농장
         </a>
         &nbsp; &gt; &nbsp; 성주의 집
-        <Sidebar />
-      </span>
-    </div>
-    <div className="w-[555px] h-[600px] bg-white rounded-2xl mt-[33px] mr-5 mb-6 flex flex-col items-center">
+      </>
+    }
+  >
       <img
         src={topBanner}
         width={555}
@@ -68,8 +69,7 @@ const CastlePage = () => (
           </a>
         </div>
       </div>
-    </div>
-  </div>
+  </PageShell>
 );
 
 export default CastlePage;

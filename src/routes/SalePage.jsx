@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 import te_051122sale01 from "../assets/sale/te_051122sale01.gif";
 import te_051122sale02 from "../assets/sale/te_051122sale02.gif";
 import tit_051122sale from "../assets/sale/tit_051122sale.gif";
@@ -332,20 +332,20 @@ function SaleComponent() {
 
 const SalePage = () => {
   return (
-    <div className="bg-[#fe9aba] rounded-2xl flex">
-      <div className="mt-1 font-gulim">
-        <span className="text-[12px] text-start ml-5">
+    <PageShell
+      bgClassName="bg-[#fe9aba]"
+      contentClassName="w-[550px] bg-white rounded-2xl mt-[33px] mr-5 mb-5"
+      breadcrumb={
+        <>
           <a href="/" className="text-blue-700">
             동물농장
           </a>
           &nbsp; &gt; &nbsp; 와글와글 장터
-          <Sidebar />
-        </span>
-      </div>
-      <div className="w-[550px] bg-white rounded-2xl mt-[33px] mr-5 mb-5">
-        <SaleComponent />
-      </div>
-    </div>
+        </>
+      }
+    >
+      <SaleComponent />
+    </PageShell>
   );
 };
 

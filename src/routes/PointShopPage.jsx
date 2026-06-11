@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 
 import point050516_title from "../assets/pointshop/point050516_title.gif";
 import FPBPANG from "../assets/pointshop/FPBPANG.gif";
@@ -261,20 +261,20 @@ function PointShop() {
 
 const PointShopPage = () => {
   return (
-    <div className="bg-[#95D2FC] rounded-2xl flex">
-      <div className="mt-1" style={{ fontFamily: "굴림" }}>
-        <span className="text-[12px] text-start ml-5">
+    <PageShell
+      bgClassName="bg-[#95D2FC]"
+      contentClassName="mt-[33px] mr-5"
+      breadcrumb={
+        <>
           <a href="/" className="text-blue-700">
             동물농장
           </a>
           &nbsp; &gt; &nbsp; 포인트 게임
-          <Sidebar />
-        </span>
-      </div>
-      <div className="mt-[33px] mr-5">
-        <PointShop />
-      </div>
-    </div>
+        </>
+      }
+    >
+      <PointShop />
+    </PageShell>
   );
 };
 export default PointShopPage;

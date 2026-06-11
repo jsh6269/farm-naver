@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 import games from "../data/pointshopGames.json";
 
 const LEVEL_META = {
@@ -62,9 +62,11 @@ const PointShopLevelPage = () => {
   const list = games.filter((g) => g.level === level);
 
   return (
-    <div className="bg-[#95D2FC] rounded-2xl flex">
-      <div className="mt-1 font-gulim">
-        <span className="text-[12px] text-start ml-5">
+    <PageShell
+      bgClassName="bg-[#95D2FC]"
+      contentClassName="w-[557px] self-start bg-white rounded-2xl mt-[33px] mr-5 mb-6 font-gulim"
+      breadcrumb={
+        <>
           <a href="/" className="text-blue-700">
             동물농장
           </a>
@@ -73,10 +75,9 @@ const PointShopLevelPage = () => {
             포인트 게임
           </Link>
           &nbsp; &gt; &nbsp; {meta.label}
-          <Sidebar />
-        </span>
-      </div>
-      <div className="w-[557px] self-start bg-white rounded-2xl mt-[33px] mr-5 mb-6 font-gulim">
+        </>
+      }
+    >
         <div className="pt-3 pb-6 px-2.5">
           <img src={img(meta.title)} alt={meta.label} className="ml-2.5" />
           <div className="flex items-start justify-end mt-1 pr-2">
@@ -94,8 +95,7 @@ const PointShopLevelPage = () => {
             </Link>
           </div>
         </div>
-      </div>
-    </div>
+    </PageShell>
   );
 };
 

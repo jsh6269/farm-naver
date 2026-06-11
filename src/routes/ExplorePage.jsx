@@ -1,4 +1,4 @@
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 import img01 from "../assets/explore/top_0924_img01.gif";
 import img02 from "../assets/explore/top_0924_img02.gif";
 import img03 from "../assets/explore/top_0924_img03.gif";
@@ -76,20 +76,20 @@ const ExploreLayout = () => (
 );
 
 const ExplorePage = () => (
-  <div className="bg-[#9966ff] rounded-2xl flex">
-    <div className="mt-1" style={{ fontFamily: "굴림" }}>
-      <span className="text-[12px] text-start ml-5">
+  <PageShell
+    bgClassName="bg-[#9966ff]"
+    contentClassName="w-[550px] h-[738px] mt-[33px] mr-5"
+    breadcrumb={
+      <>
         <a href="/" className="text-blue-700">
           동물농장
         </a>
         &nbsp; &gt; &nbsp; 탐험
-        <Sidebar />
-      </span>
-    </div>
-    <div className="w-[550px] h-[738px] mt-[33px] mr-5">
-      <ExploreLayout />
-    </div>
-  </div>
+      </>
+    }
+  >
+    <ExploreLayout />
+  </PageShell>
 );
 
 export default ExplorePage;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 import list from "../data/adoptList.json";
 
 const petImgs = import.meta.glob("../assets/petshop/pet/*.gif", {
@@ -186,9 +186,11 @@ function AdoptContent() {
 }
 
 const PetShopAdoptPage = () => (
-  <div className="bg-[#ccb4fd] rounded-2xl flex">
-    <div className="mt-1 font-gulim">
-      <span className="text-[12px] text-start ml-5">
+  <PageShell
+    bgClassName="bg-[#ccb4fd]"
+    contentClassName="w-[555px] self-start bg-white rounded-2xl mt-[33px] mr-5 mb-6"
+    breadcrumb={
+      <>
         <a href="/" className="text-blue-700">
           동물농장
         </a>
@@ -197,13 +199,11 @@ const PetShopAdoptPage = () => (
           동물가게
         </Link>
         &nbsp; &gt; &nbsp; 동물 입양
-        <Sidebar />
-      </span>
-    </div>
-    <div className="w-[555px] self-start bg-white rounded-2xl mt-[33px] mr-5 mb-6">
-      <AdoptContent />
-    </div>
-  </div>
+      </>
+    }
+  >
+    <AdoptContent />
+  </PageShell>
 );
 
 export default PetShopAdoptPage;

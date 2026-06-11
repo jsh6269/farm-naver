@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 import titlePost from "../assets/post/title_post041214.gif";
 import postmu01 from "../assets/post/postmu041214_01.gif";
 import postmu02 from "../assets/post/postmu041214_02.gif";
@@ -212,20 +212,20 @@ const PostForm = () => {
 
 const PostPage = () => {
   return (
-    <div className="bg-[#ff8ac1] rounded-2xl flex">
-      <div className="mt-1" style={{ fontFamily: "굴림" }}>
-        <span className="text-[12px] text-start ml-5">
+    <PageShell
+      bgClassName="bg-[#ff8ac1]"
+      contentClassName="w-[557px] bg-white rounded-2xl mt-[33px] mr-5 mb-8"
+      breadcrumb={
+        <>
           <a href="/" className="text-blue-700">
             동물농장
           </a>
           &nbsp; &gt; &nbsp; 우체국
-          <Sidebar />
-        </span>
-      </div>
-      <div className="w-[557px] bg-white rounded-2xl mt-[33px] mr-5 mb-8">
-        <PostForm />
-      </div>
-    </div>
+        </>
+      }
+    >
+      <PostForm />
+    </PageShell>
   );
 };
 export default PostPage;

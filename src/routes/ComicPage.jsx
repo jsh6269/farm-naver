@@ -1,4 +1,4 @@
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 import comicHeader from "../assets/comic/sub_tit_comic.gif";
 import comicSub from "../assets/comic/h_comic_lst.gif";
 import comic1 from "../assets/comic/farm_comic_01.jpg";
@@ -27,17 +27,18 @@ const comicPairs = [
 
 const ComicPage = () => {
   return (
-    <div className="bg-[#FFA825] rounded-2xl flex">
-      <div className="mt-1 font-gulim">
-        <span className="text-[12px] text-start ml-5">
+    <PageShell
+      bgClassName="bg-[#FFA825]"
+      contentClassName="w-[550px] h-[828px] bg-white rounded-2xl mt-[33px] mr-5 mb-5"
+      breadcrumb={
+        <>
           <a href="/" className="text-blue-700">
             동물농장
           </a>
           &nbsp; &gt; &nbsp; 코믹북
-          <Sidebar />
-        </span>
-      </div>
-      <div className="w-[550px] h-[828px] bg-white rounded-2xl mt-[33px] mr-5 mb-5">
+        </>
+      }
+    >
         <img src={comicHeader} className="mt-4 ml-2" alt="코믹북 헤더" />
         <div className="h-[459px] pt-4 px-5 font-gulim text-[12px]">
           <img
@@ -59,8 +60,7 @@ const ComicPage = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+    </PageShell>
   );
 };
 

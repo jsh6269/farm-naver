@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 import crystalTitle from "../assets/crystal/sub_tit35.gif";
 import crystalHeader from "../assets/crystal/img_cry01.gif";
 import txt_today from "../assets/crystal/txt_today.gif";
@@ -60,17 +60,18 @@ const CrystalPage = () => {
   const { text, img } = dummy[currentIndex];
 
   return (
-    <div className="bg-[#ead4fe] rounded-2xl flex">
-      <div className="mt-1 font-gulim">
-        <span className="text-[12px] text-start ml-5">
+    <PageShell
+      bgClassName="bg-[#ead4fe]"
+      contentClassName="w-[550px] bg-white rounded-2xl mt-[33px] mr-5 mb-5"
+      breadcrumb={
+        <>
           <a href="/" className="text-blue-700">
             동물농장
           </a>
           &nbsp; &gt; &nbsp; 라즈벨의 수정구슬
-          <Sidebar />
-        </span>
-      </div>
-      <div className="w-[550px] bg-white rounded-2xl mt-[33px] mr-5 mb-5">
+        </>
+      }
+    >
         <img
           src={crystalTitle}
           className="mt-[22px] ml-[20px] w-[146px]"
@@ -142,8 +143,7 @@ const CrystalPage = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+    </PageShell>
   );
 };
 

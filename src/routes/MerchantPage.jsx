@@ -1,4 +1,4 @@
-import Sidebar from "../components/Sidebar";
+import PageShell from "../components/PageShell";
 import mainBg from "../assets/merchant/merchant_050106_main.gif";
 import blankGif from "../assets/merchant/blank.gif";
 import subImg from "../assets/merchant/merchant_050106_sub00.gif";
@@ -50,20 +50,20 @@ const MerchantComponent = () => {
 
 const MerchantPage = () => {
   return (
-    <div className="bg-[#ffec4f] rounded-2xl flex">
-      <div className="mt-1 font-gulim">
-        <span className="text-[12px] text-start ml-5">
+    <PageShell
+      bgClassName="bg-[#ffec4f]"
+      contentClassName="w-[550px] mt-[33px] mr-5"
+      breadcrumb={
+        <>
           <a href="/" className="text-blue-700">
             동물농장
           </a>
           &nbsp; &gt; &nbsp; 중고상인
-          <Sidebar />
-        </span>
-      </div>
-      <div className="w-[550px] mt-[33px] mr-5">
-        <MerchantComponent />
-      </div>
-    </div>
+        </>
+      }
+    >
+      <MerchantComponent />
+    </PageShell>
   );
 };
 
