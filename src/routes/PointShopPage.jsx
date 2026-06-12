@@ -23,6 +23,21 @@ import hfGame from "../assets/pointshop/h_fgame.gif";
 import bgRank from "../assets/pointshop/bg_rank.gif";
 import spTab from "../assets/pointshop/sp_tab.gif";
 
+const FLASH_GAMES = [
+  { name: "트리플 팡", img: FPBPANG, url: "https://vidkidz.tistory.com/219" },
+  { name: "스도쿠 퍼즐왕", img: FPBSUDOKU, url: "https://vidkidz.tistory.com/70" },
+  { name: "틀린그림찾기", img: FPBDIFF, url: "https://vidkidz.tistory.com/9066" },
+  { name: "뮤직 톡톡", img: FSPMUSIC, url: "https://vidkidz.tistory.com/431" },
+  { name: "두근두근 데이트", img: FSPDGDATE, url: "https://vidkidz.tistory.com/101" },
+  { name: "HOT DOUGH", img: FACDOUGH, url: "https://vidkidz.tistory.com/58" },
+  { name: "하오하오", img: FPBHAO, url: "https://vidkidz.tistory.com/2405" },
+  { name: "가로세로타이핑", img: FSPTYPING, url: "https://vidkidz.tistory.com/2045" },
+  { name: "터치터치", img: FSPTOUCH, url: "https://vidkidz.tistory.com/1380" },
+  { name: "밀크쮸쮸", img: FACMILK, url: "https://vidkidz.tistory.com/7847" },
+  { name: "스시짱", img: FPBSUSHI, url: "https://vidkidz.tistory.com/15037" },
+  { name: "직소퍼즐", img: FPBJIGSAW, url: "https://vidkidz.tistory.com/2067" },
+];
+
 function PointShop() {
   return (
     <div className="w-[557px] h-full flex flex-col">
@@ -38,7 +53,11 @@ function PointShop() {
             style={{ backgroundImage: `url(${bgRank})` }}
           >
             <div className="flex relative">
-              <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/http://farm.jr.naver.com/pointshop/?id=111">
+              <a
+                href={FLASH_GAMES[0].url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span className="absolute left-[48px] top-[68px]">
                   <img src={FPBPANG} alt="" width={131} height={101} />
                 </span>
@@ -119,128 +138,14 @@ function PointShop() {
             </div>
             <div className="bg-[#fef3ff] text-[14px] border border-[#f4c0ff] rounded-b-2xl">
               <ul className="grid grid-cols-4 gap-4 px-4 py-5">
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=111">
-                    <img
-                      src={FPBPANG}
-                      alt="트리플 팡"
-                      width={131}
-                      height={101}
-                    />
-                    <p className="pblock text-center mt-1">트리플 팡</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=112">
-                    <img
-                      src={FPBSUDOKU}
-                      alt="스도쿠 퍼즐왕"
-                      width={131}
-                      height={101}
-                    />
-                    <p className="pblock text-center mt-1">스도쿠 퍼즐왕</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=113">
-                    <img
-                      src={FPBDIFF}
-                      alt="틀린그림찾기"
-                      width={131}
-                      height={101}
-                    />
-                    <p className="pblock text-center mt-1">틀린그림찾기</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=114">
-                    <img
-                      src={FSPMUSIC}
-                      alt="뮤직 톡톡"
-                      width={131}
-                      height={101}
-                    />
-                    <p className="pblock text-center mt-1">뮤직 톡톡</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=116">
-                    <img
-                      src={FSPDGDATE}
-                      alt="두근두근 데이트"
-                      width={131}
-                      height={101}
-                    />
-                    <p className="pblock text-center mt-1">두근두근 데이트</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=118">
-                    <img
-                      src={FACDOUGH}
-                      alt="HOT DOUGH"
-                      width={131}
-                      height={101}
-                    />
-                    <p className="pblock text-center mt-1">HOT DOUGH</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=119">
-                    <img src={FPBHAO} alt="하오하오" width={131} height={101} />
-                    <p className="pblock text-center mt-1">하오하오</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=120">
-                    <img
-                      src={FSPTYPING}
-                      alt="가로세로타이핑"
-                      width={131}
-                      height={101}
-                    />
-                    <p className="pblock text-center mt-1">가로세로타이핑</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=125">
-                    <img
-                      src={FSPTOUCH}
-                      alt="터치터치"
-                      width={131}
-                      height={101}
-                    />
-                    <p className="pblock text-center mt-1">터치터치</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=134">
-                    <img
-                      src={FACMILK}
-                      alt="밀크쮸쮸"
-                      width={131}
-                      height={101}
-                    />
-                    <p className="pblock text-center mt-1">밀크쮸쮸</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=142">
-                    <img src={FPBSUSHI} alt="스시짱" width={131} height={101} />
-                    <p className="pblock text-center mt-1">스시짱</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://jsh6269.github.io/farm.jr.naver.com/pointshop/?id=143">
-                    <img
-                      src={FPBJIGSAW}
-                      alt="직소퍼즐"
-                      width={131}
-                      height={101}
-                    />
-                    <p className="pblock text-center mt-1">직소퍼즐</p>
-                  </a>
-                </li>
+                {FLASH_GAMES.map((game) => (
+                  <li key={game.name}>
+                    <a href={game.url} target="_blank" rel="noopener noreferrer">
+                      <img src={game.img} alt={game.name} width={131} height={101} />
+                      <p className="pblock text-center mt-1">{game.name}</p>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
