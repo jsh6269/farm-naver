@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import foodshopHeader from "../assets/foodshop/img_food01.gif";
 import btn1 from "../assets/foodshop/btn_food01.gif";
@@ -28,7 +29,9 @@ const FoodShopPage = () => {
             빨리 새로운 요리를 해보세요! <br />
             요리에 성공시 30% 저렴한 가격으로 살 수 있답니다.
           </p>
-          <img src={btn1} alt="요리하기 버튼" className="mx-auto mt-8" />
+          <Link to="/foodshop/cook" className="block mx-auto mt-8 w-fit">
+            <img src={btn1} alt="요리하기 버튼" />
+          </Link>
         </div>
       </div>
     </PageShell>

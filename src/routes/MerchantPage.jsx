@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import mainBg from "../assets/merchant/merchant_050106_main.gif";
 import blankGif from "../assets/merchant/blank.gif";
@@ -33,13 +34,13 @@ const MerchantComponent = () => {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <a href="#">
+          <Link to="/merchant/select">
             <img
               src={btnKnock}
               alt="노크 버튼"
               className="w-[156px] h-[32px] mr-[18px]"
             />
-          </a>
+          </Link>
         </div>
         {/* 하단 디자인 */}
         <div className="h-[70px] bg-[#FEF67A] rounded-b-xl" />

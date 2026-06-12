@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import festivalHeader from "../assets/festival/img_festival01.gif";
 import btn1 from "../assets/festival/btn_festival28_ani_album.gif";
@@ -33,11 +34,17 @@ const FestivalPage = () => {
             으스스하고 재미있는 할로윈 파티가 열렸나 봐요~!
           </p>
           <div className="flex flex-wrap gap-x-[42px] gap-y-1 pl-3 pt-5">
-            <img src={btn2} alt="동물 페스티벌 버튼" />
-            <img src={btn3} alt="농장 페스티벌 버튼" />
+            <Link to="/festival/pet" className="inline-block w-fit">
+              <img src={btn2} alt="동물 페스티벌 버튼" />
+            </Link>
+            <Link to="/festival/farm" className="inline-block w-fit">
+              <img src={btn3} alt="농장 페스티벌 버튼" />
+            </Link>
           </div>
           <div className="pt-3 pl-2">
-            <img src={btn1} alt="베스트앨범 페스티벌 버튼" />
+            <Link to="/festival/album" className="inline-block w-fit">
+              <img src={btn1} alt="베스트앨범 페스티벌 버튼" />
+            </Link>
           </div>
         </div>
       </div>

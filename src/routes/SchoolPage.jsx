@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import schoolHeader from "../assets/school/img_school01.gif";
 import btn1 from "../assets/school/btn_school01.gif";
@@ -29,10 +30,18 @@ const SchoolPage = () => {
         <div className="bg-white mx-2.5 rounded-b-[5.5px] h-[459px] pt-4 px-5 font-gulim text-[12px] w-full">
           <img src={txtImg} alt="학교 안내 텍스트" className="mx-auto" />
           <div className="flex flex-wrap gap-x-[42px] gap-y-1 pt-5 justify-center">
-            <img src={btn1} alt="수업하기" />
-            <img src={btn2} alt="색칠하기" />
-            <img src={btn3} alt="말 가르치기" />
-            <img src={btn4} alt="소설책방" />
+            <Link to="/school/class">
+              <img src={btn1} alt="수업하기" />
+            </Link>
+            <Link to="/drawing">
+              <img src={btn2} alt="색칠하기" />
+            </Link>
+            <Link to="/talk">
+              <img src={btn3} alt="말 가르치기" />
+            </Link>
+            <Link to="/school/library">
+              <img src={btn4} alt="소설책방" />
+            </Link>
           </div>
         </div>
       </div>

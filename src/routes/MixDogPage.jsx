@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import title1 from "../assets/mix_dog/title1.gif";
 import carAlchemy01Bg from "../assets/mix_dog/car_alchemy01_bg.gif";
@@ -34,13 +35,13 @@ const MixDogComponent = () => {
 
           {/* 버튼 */}
           <div className="bg-white flex justify-center">
-            <a href="#">
+            <Link to="/mix_dog/craft">
               <img
                 src={btn01}
                 alt="아이템 조합하러가기"
                 className="w-[140px] h-[35px]"
               />
-            </a>
+            </Link>
           </div>
 
           {/* 하얀 여백 */}

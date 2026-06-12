@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import hospitalHeader from "../assets/hospital/img_hospital10.gif";
 import marsh from "../assets/hospital/marsh02s.gif";
@@ -34,11 +35,17 @@ const HospitalPage = () => {
             </p>
           </div>
           <div className="flex flex-wrap gap-x-[42px] ml-[52px] gap-y-1 pt-5">
-            <img src={btn1} alt="진료실" />
-            <img src={btn2} alt="약국" />
+            <Link to="/hospital/clinic">
+              <img src={btn1} alt="진료실" />
+            </Link>
+            <Link to="/hospital/pharmacy">
+              <img src={btn2} alt="약국" />
+            </Link>
           </div>
           <div className="pt-6 ml-[52px]">
-            <img src={btn3} alt="입원실" />
+            <Link to="/hospital/ward">
+              <img src={btn3} alt="입원실" />
+            </Link>
           </div>
         </div>
       </div>

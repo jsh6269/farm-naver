@@ -26,7 +26,21 @@ import FoodShopPage from "./routes/FoodShopPage";
 import MixDogPage from "./routes/MixDogPage";
 import MerchantPage from "./routes/MerchantPage";
 import HospitalPage from "./routes/HospitalPage";
+import HospitalClinicPage from "./routes/HospitalClinicPage";
+import HospitalPharmacyPage from "./routes/HospitalPharmacyPage";
+import HospitalWardPage from "./routes/HospitalWardPage";
 import SchoolPage from "./routes/SchoolPage";
+import SchoolClassPage from "./routes/SchoolClassPage";
+import SchoolLibraryPage from "./routes/SchoolLibraryPage";
+import DrawingPage from "./routes/DrawingPage";
+import TalkPage from "./routes/TalkPage";
+import FestivalPetPage from "./routes/FestivalPetPage";
+import FestivalFarmPage from "./routes/FestivalFarmPage";
+import FestivalAlbumPage from "./routes/FestivalAlbumPage";
+import FoodShopCookPage from "./routes/FoodShopCookPage";
+import MixDogCraftPage from "./routes/MixDogCraftPage";
+import MixDogMixPage from "./routes/MixDogMixPage";
+import MerchantSelectPage from "./routes/MerchantSelectPage";
 import PostPage from "./routes/PostPage";
 import ExplorePage from "./routes/ExplorePage";
 import RedVillagePage from "./routes/RedVillagePage";
@@ -93,11 +107,25 @@ function App() {
           <Route path="/crystal" element={<CrystalPage />} />
           <Route path="/comic" element={<ComicPage />} />
           <Route path="/festival" element={<FestivalPage />} />
+          <Route path="/festival/pet" element={<FestivalPetPage />} />
+          <Route path="/festival/farm" element={<FestivalFarmPage />} />
+          <Route path="/festival/album" element={<FestivalAlbumPage />} />
           <Route path="/foodshop" element={<FoodShopPage />} />
+          <Route path="/foodshop/cook" element={<FoodShopCookPage />} />
           <Route path="/mix_dog" element={<MixDogPage />} />
+          <Route path="/mix_dog/craft" element={<MixDogCraftPage />} />
+          <Route path="/mix_dog/mix" element={<MixDogMixPage />} />
           <Route path="/merchant" element={<MerchantPage />} />
+          <Route path="/merchant/select" element={<MerchantSelectPage />} />
           <Route path="/hospital" element={<HospitalPage />} />
+          <Route path="/hospital/clinic" element={<HospitalClinicPage />} />
+          <Route path="/hospital/pharmacy" element={<HospitalPharmacyPage />} />
+          <Route path="/hospital/ward" element={<HospitalWardPage />} />
           <Route path="/school" element={<SchoolPage />} />
+          <Route path="/school/class" element={<SchoolClassPage />} />
+          <Route path="/school/library" element={<SchoolLibraryPage />} />
+          <Route path="/drawing" element={<DrawingPage />} />
+          <Route path="/talk" element={<TalkPage />} />
           <Route path="/post" element={<PostPage />} />
           <Route path="/explore" element={<ExplorePage />} />
         </Routes>
