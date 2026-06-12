@@ -18,7 +18,7 @@ const SchoolClassPage = () => (
       </>
     }
   >
-    <div className="w-[555px] bg-white font-gulim text-[12px] rounded-2xl overflow-hidden">
+    <div className="w-[555px] bg-white font-gulim text-[12px] rounded-lg overflow-hidden mb-5">
       <img src={header} alt="동물학교" className="w-full rounded-t-2xl" />
 
       <div className="bg-gradient-to-b from-[#febc50] to-[#e1f3ff] mx-2.5 rounded-b-xl">
