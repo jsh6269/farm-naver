@@ -26,7 +26,7 @@ const HospitalPage = () => {
         className="w-full rounded-t-2xl"
       />
       <div className="bg-gradient-to-b from-[#77df06] to-[#e5f7fc] mx-2.5 h-[440px] rounded-b-xl flex items-start">
-        <div className="bg-white mx-2.5 rounded-b-[5.5px] h-[429px] pt-4 px-5 font-gulim text-[12px] w-full">
+        <div className="bg-white mx-2.5 rounded-b-[5.5px] h-[423px] pt-4 px-5 font-gulim text-[12px] w-full">
           <div className="flex justify-center gap-5 items-center mb-3 mt-1">
             <img src={marsh} alt="고체 알약" />
             <p className="text-[13.3px]">
